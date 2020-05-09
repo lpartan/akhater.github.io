@@ -146,7 +146,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 </div></div>
 <!--~~ Static styles ~~-->
 <div id="styleArea">
-<style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" data-tiddler-revision="0" data-tiddler-bag="default" type="text/css">/*
+<style data-tiddler-bag="default" data-tiddler-revision="0" data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" data-tiddler-revision="0" data-tiddler-bag="default" type="text/css">/*
 Basic styles used before we boot up the parsing engine
 */
 
@@ -323,7 +323,19 @@ Error message and password prompt
 
 <li>$:/SplashScreen</li>
 
+<li>$:/state/tab--1963855381</li>
+
+<li>$:/state/tab-1749438307</li>
+
+<li>$:/status/IsAnonymous</li>
+
+<li>$:/status/IsLoggedIn</li>
+
+<li>$:/status/IsReadOnly</li>
+
 <li>$:/status/RequireReloadDueToPluginChange</li>
+
+<li>$:/status/UserName</li>
 
 <li>$:/StoryList</li>
 
@@ -10828,10 +10840,28 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
+<div created="20200509222925801" modified="20200509222925801" title="$:/state/tab--1963855381" revision="1" bag="default">
+<pre>$:/themes/jd/Mono/Config</pre>
+</div>
+<div created="20200509222923776" modified="20200509222923776" title="$:/state/tab-1749438307" revision="1" bag="default">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
+</div>
+<div title="$:/status/IsAnonymous" revision="1" bag="default">
+<pre>yes</pre>
+</div>
+<div title="$:/status/IsLoggedIn" revision="2" bag="default">
+<pre>yes</pre>
+</div>
+<div title="$:/status/IsReadOnly" revision="1" bag="default">
+<pre>no</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Welcome to Drift]]" title="$:/StoryList" revision="1" bag="default">
+<div title="$:/status/UserName" revision="1" bag="default">
+<pre></pre>
+</div>
+<div created="20200509222920837" list="" modified="20200509222920838" title="$:/StoryList" revision="4" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11080,7 +11110,7 @@ html body.tc-body {
     }
 }</pre>
 </div>
-<div created="20190202114537700" creator="jd" list="$:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/new-journal $:/themes/jd/Mono/Buttons/switch-palette $:/core/ui/TopBar/menu" modified="20200504101844569" modifier="jd" tags="" title="$:/themes/jd/Mono/Database" type="application/json" revision="0" bag="default">
+<div created="20190202114537700" creator="jd" list="$:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/new-journal $:/themes/jd/Mono/Buttons/switch-palette $:/themes/jd/Mono/Buttons/searchbar $:/core/ui/TopBar/menu" modified="20200509222934931" modifier="jd" tags="" title="$:/themes/jd/Mono/Database" type="application/json" revision="2" bag="default">
 <pre>{
     &quot;grid-sticky-header-background&quot;: &quot;&lt;&lt;colour page-background&gt;&gt;&quot;,
     &quot;grid-item-background&quot;: &quot;&lt;&lt;colour background&gt;&gt;&quot;,
@@ -12005,7 +12035,7 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 
 <!--~~ Library modules ~~-->
 <div id="libraryModules" style="display:none;">
-<script data-tiddler-library="yes" data-tiddler-title="$:/library/sjcl.js" data-tiddler-type="application/javascript" data-tiddler-revision="0" data-tiddler-bag="default" type="text/javascript">"use strict";var sjcl={cipher:{},hash:{},keyexchange:{},mode:{},misc:{},codec:{},exception:{corrupt:function(a){this.toString=function(){return"CORRUPT: "+this.message};this.message=a},invalid:function(a){this.toString=function(){return"INVALID: "+this.message};this.message=a},bug:function(a){this.toString=function(){return"BUG: "+this.message};this.message=a},notReady:function(a){this.toString=function(){return"NOT READY: "+this.message};this.message=a}}};
+<script data-tiddler-bag="default" data-tiddler-library="yes" data-tiddler-revision="0" data-tiddler-title="$:/library/sjcl.js" data-tiddler-type="application/javascript" data-tiddler-revision="0" data-tiddler-bag="default" type="text/javascript">"use strict";var sjcl={cipher:{},hash:{},keyexchange:{},mode:{},misc:{},codec:{},exception:{corrupt:function(a){this.toString=function(){return"CORRUPT: "+this.message};this.message=a},invalid:function(a){this.toString=function(){return"INVALID: "+this.message};this.message=a},bug:function(a){this.toString=function(){return"BUG: "+this.message};this.message=a},notReady:function(a){this.toString=function(){return"NOT READY: "+this.message};this.message=a}}};
 sjcl.cipher.aes=function(a){this.s[0][0][0]||this.O();var b,c,d,e,f=this.s[0][4],g=this.s[1];b=a.length;var h=1;if(4!==b&&6!==b&&8!==b)throw new sjcl.exception.invalid("invalid aes key size");this.b=[d=a.slice(0),e=[]];for(a=b;a<4*b+28;a++){c=d[a-1];if(0===a%b||8===b&&4===a%b)c=f[c>>>24]<<24^f[c>>16&255]<<16^f[c>>8&255]<<8^f[c&255],0===a%b&&(c=c<<8^c>>>24^h<<24,h=h<<1^283*(h>>7));d[a]=d[a-b]^c}for(b=0;a;b++,a--)c=d[b&3?a:a-4],e[b]=4>=a||4>b?c:g[0][f[c>>>24]]^g[1][f[c>>16&255]]^g[2][f[c>>8&255]]^g[3][f[c&
 255]]};
 sjcl.cipher.aes.prototype={encrypt:function(a){return t(this,a,0)},decrypt:function(a){return t(this,a,1)},s:[[[],[],[],[],[]],[[],[],[],[],[]]],O:function(){var a=this.s[0],b=this.s[1],c=a[4],d=b[4],e,f,g,h=[],k=[],l,n,m,p;for(e=0;0x100>e;e++)k[(h[e]=e<<1^283*(e>>7))^e]=e;for(f=g=0;!c[f];f^=l||1,g=k[g]||1)for(m=g^g<<1^g<<2^g<<3^g<<4,m=m>>8^m&255^99,c[f]=m,d[m]=f,n=h[e=h[l=h[f]]],p=0x1010101*n^0x10001*e^0x101*l^0x1010100*f,n=0x101*h[m]^0x1010100*m,e=0;4>e;e++)a[e][f]=n=n<<24^n>>>8,b[e][m]=p=p<<24^p>>>8;for(e=
@@ -12069,7 +12099,7 @@ b){var c={},d;for(d=0;d<b.length;d++)void 0!==a[b[d]]&&(c[b[d]]=a[b[d]]);return 
 </div>
 <!--~~ Boot kernel prologue ~~-->
 <div id="bootKernelPrefix" style="display:none;">
-<script data-tiddler-title="$:/boot/bootprefix.js" data-tiddler-type="application/javascript" data-tiddler-revision="0" data-tiddler-bag="default" type="text/javascript">/*\
+<script data-tiddler-bag="default" data-tiddler-revision="0" data-tiddler-title="$:/boot/bootprefix.js" data-tiddler-type="application/javascript" data-tiddler-revision="0" data-tiddler-bag="default" type="text/javascript">/*\
 title: $:/boot/bootprefix.js
 type: application/javascript
 
@@ -12192,7 +12222,7 @@ if(typeof(exports) === "undefined") {
 </div>
 <!--~~ Boot kernel ~~-->
 <div id="bootKernel" style="display:none;">
-<script data-tiddler-title="$:/boot/boot.js" data-tiddler-type="application/javascript" data-tiddler-revision="0" data-tiddler-bag="default" type="text/javascript">/*\
+<script data-tiddler-bag="default" data-tiddler-revision="0" data-tiddler-title="$:/boot/boot.js" data-tiddler-type="application/javascript" data-tiddler-revision="0" data-tiddler-bag="default" type="text/javascript">/*\
 title: $:/boot/boot.js
 type: application/javascript
 
