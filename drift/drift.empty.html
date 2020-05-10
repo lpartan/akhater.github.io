@@ -227,8 +227,6 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
-<li>&lt;- This icons indicates that this entry has an associated tiddler, click on it to navigate</li>
-
 <li>$:/.tb/macros/list-search</li>
 
 <li>$:/.tb/ui/AdvancedSearch/Field</li>
@@ -367,68 +365,6 @@ Error message and password prompt
 
 <li>$:/view</li>
 
-<li>2020-05-10</li>
-
-<li>2020-05-11</li>
-
-<li>Changelog</li>
-
-<li>Credits &amp; Dependencies</li>
-
-<li>Daily Notes</li>
-
-<li>Drift</li>
-
-<li>Example Button Pop</li>
-
-<li>Example Keywords Source</li>
-
-<li>Example Keywords: Another tiddler with keyword 1 as keyword</li>
-
-<li>Example: Backlink Destination</li>
-
-<li>Example: Backlink Source</li>
-
-<li>Example: Button Pop destination</li>
-
-<li>Example: Freelink Source</li>
-
-<li>Example: Highlighted text</li>
-
-<li>Example: No Inbound links</li>
-
-<li>Example: Tags Source</li>
-
-<li>Example: Tiddler with external reference</li>
-
-<li>Example: Transclude External site as Popup</li>
-
-<li>Examples</li>
-
-<li>FAQ</li>
-
-<li>Features</li>
-
-<li>Feedback &amp; Suggestions</li>
-
-<li>Freelinks</li>
-
-<li>keyword1</li>
-
-<li>long text</li>
-
-<li>Lorem</li>
-
-<li>Plugin - Daily Notes</li>
-
-<li>Plugin - TWCrosslinks</li>
-
-<li>Tag1</li>
-
-<li>Todo</li>
-
-<li>Welcome to Drift</li>
-
 </ul>
 </p>
 
@@ -443,9 +379,6 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200510215617574" modified="20200510215620972" title="&lt;- This icons indicates that this entry has an associated tiddler, click on it to navigate" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[2020-05-11]] @  ''04:55''</pre>
-</div>
 <div created="20141202200448128" creator="Tobias Beer" modified="20200429103629593" modifier="Tobias Beer" summary="the [[list-search]] macro allows to filter list outputs" tags="$:/tags/Macro" title="$:/.tb/macros/list-search" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define list-search(
 filter:&quot;[tags[]]&quot;,
@@ -609,7 +542,7 @@ mark.pink { background-color: #ff69b4; }
 }
 </pre>
 </div>
-<div created="20200509172404131" description="Interstitial Journaling Plugin" list="readme change.log" modified="20200510220648578" name="DailyNotes" plugin-type="plugin" title="$:/ak/plugins/DailyNotes" type="application/json" version="0.0.10" revision="0" bag="default">
+<div created="20200509172404131" description="Interstitial Journaling Plugin" list="readme change.log" modified="20200510225313798" name="DailyNotes" plugin-type="plugin" title="$:/ak/plugins/DailyNotes" type="application/json" version="0.0.11" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/config/ShortcutInfo/DailyNotes&quot;: {
@@ -636,13 +569,13 @@ mark.pink { background-color: #ff69b4; }
         },
         &quot;$:/ak/plugins/DailyNotes/ui/capture&quot;: {
             &quot;created&quot;: &quot;20200509164956768&quot;,
-            &quot;text&quot;: &quot;\\define get-origEntry() $(entryTime)$~$(entryData)$ &lt;br /&gt;\n\n\\define show-deleteButton()\n&lt;span class=\&quot;DN-entries DN-deleteButton\&quot;&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Delete Entry\&quot; set={{$:/temp/DN-Selection}} setTo={{{ [&lt;Content&gt;split&lt;get-origEntry&gt;join[]] }}}  &gt;\n    {{$:/core/images/delete-button}}\n&lt;/$button&gt;&lt;/span&gt;\n\\end\n\n\\define DN_ifTiddlerNotExists()\n&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Expand Entry\&quot; &gt;\n    {{$:/core/images/clone-button}}\n    &lt;$action-createtiddler $basetitle=&lt;&lt;entryData&gt;&gt; text=\&quot;\&quot;\&quot;[[$(today)$]] @ $(entryTime)$\&quot;\&quot;\&quot;  /&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;entryData&gt;&gt; /&gt;\n&lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n\\end\n\n\\define DN_ifTiddlerExists()\n&lt;$list filter=\&quot;[title&lt;entryData&gt;] +[has[title]]\&quot;  emptyMessage=&lt;&lt;DN_ifTiddlerNotExists&gt;&gt; &gt;\n    &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Zoom to Entry\&quot; &gt;\n        {{$:/core/images/link}}\n        &lt;$action-navigate $to=&lt;&lt;entryData&gt;&gt; /&gt;\n    &lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n&lt;/$list&gt;\n\\end\n\n\n\\define get-updatedText() $(currentContent)$ ''$(timestamp)$''~$(add)$ &lt;br /&gt;\n\n\n&lt;$set name=today value=&lt;&lt;now YYYY-0MM-0DD&gt;&gt; &gt;\n    &lt;h2&gt; &lt;&lt;today&gt;&gt; &lt;$button class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Manually edit Today's notes\&quot;&gt;{{$:/core/images/edit-button}}&lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;today&gt;&gt; /&gt;&lt;/$button&gt;&lt;/h2&gt;\n    &lt;$keyboard key=\&quot;enter\&quot;&gt; \n        &lt;$edit-text class=\&quot;dn-input input-large\&quot;  tiddler=\&quot;$:/temp/Append\&quot; field=\&quot;newEntry\&quot;  placeholder=\&quot;Free your mind, dump it here...\&quot; focus=\&quot;true\&quot;/&gt;\n        &lt;label class=\&quot;dn-label\&quot;&gt;Press ⏎ to capture&lt;/label&gt;\n        &lt;$set  name=\&quot;timestamp\&quot; value=&lt;&lt;now \&quot;0hh:0mm\&quot;&gt;&gt;  &gt;\n            &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n                &lt;$set name=\&quot;add\&quot; value={{{ [{$:/temp/Append!!newEntry}trim[]] }}} &gt;\n                    &lt;$action-setfield $tiddler=&lt;&lt;today&gt;&gt;  text=&lt;&lt;get-updatedText&gt;&gt; /&gt; \n                    &lt;$fieldmangler tiddler=&lt;&lt;today&gt;&gt; &gt;\n                        &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=\&quot;DailyNotes\&quot;  /&gt; \n                    &lt;/$fieldmangler&gt;\n                    &lt;$action-deletefield $tiddler=\&quot;$:/temp/Append\&quot; newEntry /&gt;\n                    &lt;$action-setfield $tiddler=\&quot;$:/temp/DN-Selection\&quot; text=&lt;&lt;today&gt;&gt; /&gt;\n                &lt;/$set&gt;\n            &lt;/$set&gt;\n        &lt;/$set&gt;\n    &lt;/$keyboard&gt;\n\n    &lt;h3&gt; Entries of the: \n        &lt;$select tiddler=\&quot;$:/temp/DN-Selection\&quot; default=\&quot;2020-05-11\&quot; &gt;  \n            &lt;$list filter='[all[]tag[DailyNotes]!sort[title]]' &gt; \n                &lt;option value=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$view field='title'/&gt;&lt;/option&gt;\n            &lt;/$list&gt;\n        &lt;/$select&gt;\n    &lt;/h3&gt;\n    &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n        &lt;$set name=Content tiddler={{$:/temp/DN-Selection}} emptyValue=&lt;&lt;currentContent&gt;&gt; &gt;\n            &lt;$list filter=\&quot;[&lt;Content&gt;split[&lt;br /&gt;]!is[blank]]\&quot; variable=\&quot;entry\&quot;&gt;\n                &lt;$vars entryTime={{{ [&lt;entry&gt;split[~]first[]] }}}  entryData={{{ [&lt;entry&gt;split[~]butfirst[]trim[]] }}} &gt;\n                    &lt;div class=\&quot;DN-entries\&quot;&gt;\n                        &lt;&lt;DN_ifTiddlerExists&gt;&gt;\n                    &lt;/div&gt;\n                &lt;/$vars&gt;\n            &lt;/$list&gt;\n        &lt;/$set&gt;\n    &lt;/$set&gt;\n&lt;/$set&gt;&quot;,
+            &quot;text&quot;: &quot;\\define get-origEntry() $(entryTime)$~$(entryData)$ &lt;br /&gt;\n\n\\define show-deleteButton() \n&lt;span class=\&quot;DN-entries DN-deleteButton\&quot;&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Delete Entry\&quot; set={{$:/temp/DN-Selection}} setTo={{{ [&lt;Content&gt;split&lt;get-origEntry&gt;join[]] }}}  &gt;\n    {{$:/core/images/delete-button}}\n&lt;/$button&gt;&lt;/span&gt;\n\\end\n\n\\define DN_ifTiddlerNotExists()\n&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Expand Entry\&quot; &gt;\n    {{$:/core/images/clone-button}}\n    &lt;$action-createtiddler $basetitle=&lt;&lt;entryData&gt;&gt; text=\&quot;\&quot;\&quot;[[$(today)$]] @ $(entryTime)$\&quot;\&quot;\&quot;  /&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;entryData&gt;&gt; /&gt;\n&lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n\\end\n\n\\define DN_ifTiddlerExists()\n&lt;$list filter=\&quot;[title&lt;entryData&gt;] +[has[title]]\&quot;  emptyMessage=&lt;&lt;DN_ifTiddlerNotExists&gt;&gt; &gt;\n    &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Zoom to Entry\&quot; &gt;\n        {{$:/core/images/link}}\n        &lt;$action-navigate $to=&lt;&lt;entryData&gt;&gt; /&gt;\n    &lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n&lt;/$list&gt;\n\\end\n\n\n\\define get-updatedText() $(currentContent)$ ''$(timestamp)$''~$(add)$ &lt;br /&gt;\n\n\n&lt;$set name=today value=&lt;&lt;now YYYY-0MM-0DD&gt;&gt; &gt;\n    &lt;h2&gt; &lt;&lt;today&gt;&gt; &lt;$button class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Manually edit Today's notes\&quot;&gt;{{$:/core/images/edit-button}}&lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;today&gt;&gt; /&gt;&lt;/$button&gt;&lt;/h2&gt;\n    &lt;$keyboard key=\&quot;enter\&quot;&gt; \n        &lt;$edit-text class=\&quot;dn-input input-large\&quot;  tiddler=\&quot;$:/temp/Append\&quot; field=\&quot;newEntry\&quot;  placeholder=\&quot;Free your mind, dump it here...\&quot; focus=\&quot;true\&quot;/&gt;\n        &lt;label class=\&quot;dn-label\&quot;&gt;Press ⏎ to capture&lt;/label&gt;\n        &lt;$set  name=\&quot;timestamp\&quot; value=&lt;&lt;now \&quot;0hh:0mm\&quot;&gt;&gt;  &gt;\n            &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n                &lt;$set name=\&quot;add\&quot; value={{{ [{$:/temp/Append!!newEntry}trim[]] }}} &gt;\n                    &lt;$action-setfield $tiddler=&lt;&lt;today&gt;&gt;  text=&lt;&lt;get-updatedText&gt;&gt; /&gt; \n                    &lt;$fieldmangler tiddler=&lt;&lt;today&gt;&gt; &gt;\n                        &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=\&quot;DailyNotes\&quot;  /&gt; \n                    &lt;/$fieldmangler&gt;\n                    &lt;$action-deletefield $tiddler=\&quot;$:/temp/Append\&quot; newEntry /&gt;\n                    &lt;$action-setfield $tiddler=\&quot;$:/temp/DN-Selection\&quot; text=&lt;&lt;today&gt;&gt; /&gt;\n                &lt;/$set&gt;\n            &lt;/$set&gt;\n        &lt;/$set&gt;\n    &lt;/$keyboard&gt;\n\n    &lt;h3&gt; Entries of the: \n        &lt;$select tiddler=\&quot;$:/temp/DN-Selection\&quot; default=\&quot;\&quot; &gt;  \n            &lt;$list filter='[all[]tag[DailyNotes]!sort[title]]' &gt; \n                &lt;option value=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$view field='title'/&gt;&lt;/option&gt;\n            &lt;/$list&gt;\n        &lt;/$select&gt;\n    &lt;/h3&gt;\n    &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n        &lt;$set name=Content tiddler={{$:/temp/DN-Selection}} emptyValue=\&quot;\&quot; &gt;\n            &lt;$list filter=\&quot;[&lt;Content&gt;split[&lt;br /&gt;]!is[blank]]\&quot; variable=\&quot;entry\&quot;&gt;\n                &lt;$vars entryTime={{{ [&lt;entry&gt;split[~]first[]] }}}  entryData={{{ [&lt;entry&gt;split[~]butfirst[]trim[]] }}} &gt;\n                    &lt;div class=\&quot;DN-entries\&quot;&gt;\n                        &lt;&lt;DN_ifTiddlerExists&gt;&gt;\n                    &lt;/div&gt;\n                &lt;/$vars&gt;\n            &lt;/$list&gt;\n        &lt;/$set&gt;\n    &lt;/$set&gt;\n&lt;/$set&gt;&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;63&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/ui/capture&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200510215730794&quot;,
+            &quot;modified&quot;: &quot;20200510225059676&quot;,
             &quot;caption&quot;: &quot;Daily Notes&quot;
         },
         &quot;$:/ak/plugins/DailyNotes/stylesheet&quot;: {
@@ -657,10 +590,10 @@ mark.pink { background-color: #ff69b4; }
         },
         &quot;$:/ak/plugins/DailyNotes/change.log&quot;: {
             &quot;created&quot;: &quot;20200510091859948&quot;,
-            &quot;text&quot;: &quot;''v0.0.10'' -  2020-05-11\n\n* Recoded from scratch\n* Cleaner code\n* Delete Icon just shows on hover\n* Different Icons for expanded and non expanded entries\n* Cleaner Daily Note tiddler easier to manually edit \n\n''v0.0.6'' -  2020-05-10\n\n* Added a way to see older Daily Notes\n\n''v0.0.4'' -  2020-05-10\n\n* Initial Release&quot;,
+            &quot;text&quot;: &quot;''v0.0.11'' -  2020-05-11\n\n* Recoded from scratch\n* Cleaner code\n* Delete Icon just shows on hover\n* Different Icons for expanded and non expanded entries\n* Cleaner Daily Note tiddler easier to manually edit \n\n''v0.0.6'' -  2020-05-10\n\n* Added a way to see older Daily Notes\n\n''v0.0.4'' -  2020-05-10\n\n* Initial Release&quot;,
             &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/change.log&quot;,
-            &quot;modified&quot;: &quot;20200510220039287&quot;
+            &quot;modified&quot;: &quot;20200510225259830&quot;
         },
         &quot;$:/ak/plugins/DailyNotes/readme&quot;: {
             &quot;created&quot;: &quot;20200510092225619&quot;,
@@ -12080,303 +12013,6 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 </div>
 <div created="20200429143346003" modified="20200508063203592" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>zoomin</pre>
-</div>
-<div created="20200510220312190" modified="20200510220340155" tags="DailyNotes" title="2020-05-10" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre> ''19:30''~Previous Day entry &lt;br /&gt; </pre>
-</div>
-<div created="20200510210024272" modified="20200510220407512" tags="DailyNotes" title="2020-05-11" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre> ''02:30''~Entry Example &lt;br /&gt; ''02:33''~&lt;- Click on the plus sign to create a tiddler associated with this entry &lt;br /&gt; ''03:59''~Hover over me and delete the trash button -&gt; &lt;br /&gt; ''04:55''~&lt;- This icons indicates that this entry has an associated tiddler, click on it to navigate &lt;br /&gt;</pre>
-</div>
-<div created="20200502114035466" modified="20200510220949302" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>''v0.0.19'' - 2020-05-11
-
-* Updated [[Daily Notes|Plugin - Daily Notes]] to v0.0.10
-
-''v0.0.18'' - 2020-05-10
-
-* Updated [[Daily Notes|Plugin - Daily Notes]] to v0.0.6
-
-''v0.0.16'' - 2020-05-10
-
-* Installed [[Daily Notes|Plugin - Daily Notes]] press alt+Q to test it or click [[Daily Notes]]
-
-''v0.0.15'' - 2020-05-08
-
-* Highlighted text [[Example: Highlighted text]]
-* Updated [[TWCrosslinks|Plugin - TWCrosslinks]] to latest version with now a cool transclude feature &amp; more
-* Bug fix
-
-''v0.0.10'' - 2020-05-05
-
-* Bug fix
-
-''v0.0.9'' - 2020-05-05
-
-* Updated [[TWCrosslinks|Plugin - TWCrosslinks]] to v.0.1.0
-* Added [[Lorem]] example
-* Added a fix for long Bullet and list items under &quot;Control Panel&quot; -&gt; &quot;Appearance&quot;  -&gt; &quot;Drift Tweaks&quot;
-** Try it here &lt;$checkbox tiddler=&quot;$:/ak/drift/TweaksDB&quot; index=&quot;wrapulil&quot; checked=&quot;true&quot; unchecked=&quot;false&quot; default=&quot;false&quot;&gt; Check this box if you use long bullet or numbered lists &lt;/$checkbox&gt;
-
-''v0.0.8'' - 2020-05-04
-
-* Fixed pop-up transclude bug
-
-''v0.0.6'' - 2020-05-04
-
-* Added &quot;Drift Tweaks&quot; under &quot;Control Panel&quot; -&gt; &quot;Appearance&quot; 
-* Added option to show the Bullet Points and Numbers can be found under  &quot;Control Panel&quot; -&gt; &quot;Appearance&quot;  -&gt; &quot;Drift Tweaks&quot;
-** Try it here &lt;$checkbox tiddler=&quot;$:/ak/drift/TweaksDB&quot; index=&quot;showulil&quot; checked=&quot;true&quot; unchecked=&quot;false&quot; default=&quot;false&quot;&gt; Show Bullets &amp; Numbers&lt;/$checkbox&gt;
-
-''v0.0.4'' - 2020-05-04
-
-* Enabled a &quot;Light Palette&quot; and the toggle switch {{$:/themes/jd/Mono/Buttons/switch-palette}} is now in the top bar, give it a try
-
-''v0.0.3'' - 2020-05-03
-
-* Updated [[TWCrosslinks|Plugin - TWCrosslinks]] to v.0.0.7
-
-''v0.0.2'' - 2020-05-02
-
-* Fixing view on mobile when &quot;Zoomin&quot; Story view is selected
-
-''v0.0.1'' - 2020-05-02
-
-*Initial release</pre>
-</div>
-<div created="20200501220821819" modified="20200502160315628" tags="" title="Credits &amp; Dependencies" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!!Credits
- *[[Abraham|https://twitter.com/ABSamma/status/1256536729940570113?s=20]] for his help fixing the CSS in mobile view
-
-!!Dependencies
-!!!Theme
-*[[Mono Theme|http://j.d.mono.tiddlyspot.com/]]
-!!! Plugins
-* [[Autocomplete|http://snowgoon88.github.io/TW5-extendedit]]</pre>
-</div>
-<div created="20200510220422305" modified="20200510220432383" tags="" title="Daily Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>{{$:/ak/plugins/DailyNotes/ui/capture}} 
-</pre>
-</div>
-<div created="20200501213211913" modified="20200502165953298" title="Drift" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!Welcome to [[Drift]]
-
-[[Drift]] is an adaptation of [[TiddlyWiki|https://tiddlywiki.com]] with the goal of helping you ''Collect''. ''Organize''. and ''Grow''. your ideas while keeping tab on how they interconnect together and fluidly [[Drift]] from one to another.
-
-[[Drift]] was inspired by [[TiddlyBlink|https://giffmex.org/gifts/tiddlyblink.html]] / [[Stroll|https://giffmex.org/experiments/tiddlyblink.experiment.html]] and adapted to fit my needs.
-
-Download empty file from [[Github|https://github.com/akhater/akhater.github.io/blob/master/drift/drift.empty.html]]
-
-</pre>
-</div>
-<div created="20200501213943404" modified="20200502002818755" tags="" title="Example Button Pop" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Just showing how a tiddler can be transcluded in a &lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/wishlist&quot;&gt;&gt; class=&quot;tc-btn-invisible tc-tiddlylink&quot;&gt;
-pop-up frame 
-&lt;/$button&gt; just like a website
-&lt;$reveal state=&lt;&lt;qualify &quot;$:/state/popup/wishlist&quot;&gt;&gt; type=&quot;popup&quot; position=&quot;belowleft&quot; animate=&quot;yes&quot;&gt;
-&lt;pre class=&quot;tc-drop-down&quot;&gt;
-
-{{Example: Button Pop destination}}
-
-&lt;/pre&gt; 
-&lt;/$reveal&gt;</pre>
-</div>
-<div created="20200501222318420" keywords="Keyword1 [[Keyword with space]]" modified="20200501222740485" tags="" title="Example Keywords Source" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is a tiddler with a bunch of keywords
-You can see in the footer the keywords in a &quot;tag-pill format&quot;
-
-Click on each one to see the relevant tiddlers using the same keywords and/or click on the keyword itself.</pre>
-</div>
-<div created="20200501222755938" keywords="keyword1" modified="20200501222910055" tags="" title="Example Keywords: Another tiddler with keyword 1 as keyword" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is another tiddler with keyword 1 as keyword</pre>
-</div>
-<div created="20200501225042646" modified="20200501225129419" title="Example: Backlink Destination" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is the tiddler of the Backlink destination tiddler
-
-In the &quot;inbound links&quot; &quot;Backlink&quot; tab is populated</pre>
-</div>
-<div created="20200501224859165" modified="20200501225026144" tags="" title="Example: Backlink Source" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is a tiddler with a &quot;//hard//&quot; or direct backlink to [[Example: Backlink Destination]]</pre>
-</div>
-<div created="20200502002513326" modified="20200502002609010" tags="" title="Example: Button Pop destination" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is the tiddler that you will see when you click on the link
-I am just a transcluded tiddler </pre>
-</div>
-<div created="20200501225514783" modified="20200501230416115" tags="" title="Example: Freelink Source" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>//Freelinks// happen when a source tiddler contains the same word as the destination tiddler's title without a direct link to it using ``[[ ]]``
-
-&lt;$button&gt;
-&lt;$action-navigate $to=&quot;Freelinks&quot;/&gt;
-Click to open //Freelinks// tiddler
-&lt;/$button&gt;
-</pre>
-</div>
-<div created="20200505205051534" modified="20200508045821527" tags="" title="Example: Highlighted text" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Whether you like &lt;mark class=&quot;blue&quot;&gt;blue&lt;/mark&gt; 
-&lt;mark class=&quot;green&quot;&gt;green&lt;/mark&gt; 
-&lt;mark class=&quot;yellow&quot;&gt;yellow&lt;/mark&gt;
-&lt;mark class=&quot;orange&quot;&gt;orange&lt;/mark&gt;
-&lt;mark class=&quot;pink&quot;&gt;pink&lt;/mark&gt;
-or
-&lt;mark&gt;this yellow&lt;/mark&gt;
-
-Drift got you covered</pre>
-</div>
-<div created="20200502083645471" modified="20200502083738332" tags="" title="Example: No Inbound links" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This Tiddler has no footer since it is not referenced anywhere else in [[Drift]]</pre>
-</div>
-<div created="20200501224438750" modified="20200501224535930" tags="Tag1 Tag2" title="Example: Tags Source" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is a tiddler with some tags
-
-Click on each of these Tags</pre>
-</div>
-<div created="20200501230522449" modified="20200501231047342" reference="Drift" tags="" title="Example: Tiddler with external reference" type="text/vnd.tiddlywiki" url="http://akhater.github.io/drift" revision="0" bag="default">
-<pre>[[Drift]] is excellent to keep track of all my ideas in one place and a tiddler can also have an external url as a reference.
-
-To do that simply add a &quot;reference&quot; field and a &quot;url&quot; field as I've done in this tiddler.
-
-In which case the footer would look like the below</pre>
-</div>
-<div created="20200501232933923" modified="20200501233305154" tags="" title="Example: Transclude External site as Popup" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is a simple example on how you can transclude an &lt;div class=&quot;tooltip&quot;&gt;[[external website |https://www.wikipedia.com]]
-     &lt;span class=&quot;tooltiptext&quot;&gt;&lt;iframe  class=&quot;resp-iframe&quot;   src=&quot;https://www.wikipedia.com&quot;  scrolling=&quot;no&quot;/&gt;&lt;/span&gt;
-  &lt;/div&gt; as a pop-up.
-
-Just hover on the above link</pre>
-</div>
-<div created="20200501214053257" modified="20200508050142954" tags="" title="Examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* [[Button Pop|Example Button Pop]]
-* [[Keywords|Example Keywords Source]] - [[Tags|Example: Tags Source]] - [[Backlinks|Example: Backlink Source]] - [[Freelinks|Example: Freelink Source]]
-* [[External Reference|Example: Tiddler with external reference]]
-* [[Transclude External websites in a pop-up|Example: Transclude External site as Popup]]
-* [[Inbound links transclusion in long text|Lorem]]
-* [[Highlighted text|Example: Highlighted text]]</pre>
-</div>
-<div created="20200504121140887" modified="20200504143615861" tags="" title="FAQ" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!!! How can I make the tiddler title font bigger?  
-* Control Panel -&gt; Appearances -&gt; Mono Tweaks and uncheck ''//Style tiddler frames//''
-
-!!! My Wikitext is not rendering bullet lists? 
-* ~~This is form the [[Mono Theme|http://j.d.mono.tiddlyspot.com/]], I am working on fixing that ~~
-* Fixed in version 0.0.6, found under Control Panel -&gt; Appearances -&gt; Drift Tweaks
-</pre>
-</div>
-<div created="20200501214207050" modified="20200508052625795" tags="" title="Features" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>*[X] Shows created and Updated time of a Tiddler
-*[X] Advanced Search ([[Theme Feature|Credits &amp; Dependencies]])
-*[X] Show most recent tiddlers if all tiddlers are closed ([[Theme Feature|Credits &amp; Dependencies]])
-**&lt;$button class=&quot;tc-btn-invisible tc-btn-mini&quot;&gt;
-&lt;$action-sendmessage $message=&quot;tm-close-all-tiddlers&quot;/&gt;
-Click here to test
-&lt;/$button&gt; 
-*[X] Shows created and Updated time of a Tiddler
-*[X] Autocomplete by [[plugin|Credits &amp; Dependencies]]
-*[X] Different &quot;types&quot; of linking [[Plugin - TWCrosslinks]]
-** [[Tags|Example: Tags Source]]
-** Hard or Direct [[Backlinks|Example: Backlink Source]]
-** [[Keywords|Example Keywords Source]]
-** [[Freelinks|Example: Freelink Source]]
-*[X] Transclude internal linking on hover [[Plugin - TWCrosslinks]]
-*[X] Inbound links in the footer (only shown when existant) [[Plugin - TWCrosslinks]]
-*[X] [[External Reference|Example: Tiddler with external reference]] tracking
-*[X] [[Transclude External websites in a pop-up|Example: Transclude External site as Popup]]
-*[X] [[Text Highlight|Example: Highlighted text]]
-*[X] Night &amp; Day Palette with easy toggle ([[Theme Feature|Credits &amp; Dependencies]])  </pre>
-</div>
-<div created="20200501233814786" modified="20200501233949808" tags="" title="Feedback &amp; Suggestions" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>For any feedback / suggestions or comment related to [[Drift]] here is the link for the google group thread
-https://groups.google.com/forum/#!topic/tiddlywiki/QgPYL0JhxcY</pre>
-</div>
-<div created="20200501230041736" modified="20200501235032291" tags="" title="Freelinks" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Now check the Freelinks tab of the &quot;inbound links&quot; section</pre>
-</div>
-<div created="20200501222923073" modified="20200501223023037" title="keyword1" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is the tiddler of Keyword 1, even if it wasn't created you would see the same footer with the various &quot;inbound links&quot; related to this keyword.
-
-In this case the &quot;Keywords&quot; tab is populated</pre>
-</div>
-<div created="20200504175335313" modified="20200504214325181" tags="" title="long text" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et elit in ipsum ultricies finibus. Donec tortor sapien, condimentum vitae luctus sed, interdum sed erat. Vestibulum mollis, leo sit amet aliquam semper, eros elit auctor est, sed rhoncus felis erat non mi. Quisque porttitor diam felis, nec rhoncus felis cursus sit amet. Fusce porta malesuada augue, gravida commodo lacus maximus a. Praesent sed pharetra lectus. Ut condimentum est sit amet maximus rhoncus. Nullam maximus luctus vehicula. Duis luctus consectetur libero, eu lobortis diam. Curabitur sed felis in nulla cursus semper scelerisque ac odio. Integer in nunc eget erat tincidunt varius. Phasellus sed nisi lorem. Vestibulum sodales velit molestie ante condimentum varius.
-
-Maecenas ac risus felis. Vivamus finibus purus arcu, a tincidunt eros ornare in. Sed ornare leo quis velit interdum finibus. Etiam in elementum nunc, a blandit tellus. Maecenas porttitor posuere mauris in ultrices. Phasellus ex erat, commodo dictum mollis a, imperdiet eu est. Maecenas mauris ex, volutpat id suscipit quis, suscipit a augue. Maecenas id molestie leo, at fermentum odio.
-
-Duis mi massa, posuere et est vitae, molestie varius leo. Praesent gravida id sem at posuere. Nam quis nisi tincidunt, volutpat mi in, cursus nisi. Nam in fermentum est. Nullam mauris dolor, placerat nec nunc vitae, gravida dapibus diam. Aenean imperdiet a nunc nec facilisis. Suspendisse potenti. Praesent gravida mi metus, et tristique ligula blandit ut. Nulla at diam pharetra, cursus ipsum id, laoreet mauris. In hac habitasse platea dictumst. Duis imperdiet facilisis metus et imperdiet.
-
-Mauris non suscipit dolor. Donec mattis suscipit lorem, quis auctor magna malesuada ut. Nunc ac erat mattis tellus mattis facilisis ac et dui. Nulla pretium orci vitae sapien fermentum, in dignissim erat vestibulum. Morbi commodo nec mi vitae malesuada. Etiam sit amet justo ut arcu faucibus vehicula. Aenean nisl ex, pretium ultricies risus ut, maximus mattis libero. Praesent gravida lacus diam. Duis eleifend ultricies nunc quis tempor. Donec lacus est, mollis et maximus a, mattis eu metus. Donec scelerisque urna sed efficitur fringilla. Ut ornare nunc sit amet massa iaculis condimentum. Nulla maximus mi metus, id mollis felis elementum quis. Mauris ultrices convallis elit, eu fringilla nibh bibendum sit amet. In ante lorem, elementum et pharetra at, molestie sed augue. Etiam lobortis efficitur urna, eu condimentum ex scelerisque sed.
-
-Cras et consequat nisi. Fusce ac nunc pretium turpis pretium ornare at vitae eros. Morbi varius ac ex ac ullamcorper. Phasellus sed eros urna. Nulla facilisi. Ut sed quam mattis dolor facilisis laoreet eu vel lorem. Suspendisse sit amet vulputate orci.
-
-Mauris semper, tortor sed mattis condimentum, enim arcu maximus augue, vel pretium mauris tellus ut tellus. Sed id pulvinar risus, ac lobortis nunc. Duis tempor id urna eget tempus. Nunc maximus sapien quis est ullamcorper, non semper orci ornare. Integer varius elit in leo feugiat scelerisque. Quisque dignissim sed nunc non varius. Quisque aliquam mattis orci, in porta magna maximus nec. Mauris fringilla, erat quis posuere placerat, mauris mauris mattis lacus, nec placerat metus risus non odio. Donec eget tempus erat. Donec sed pellentesque purus. Praesent est enim, auctor non ipsum ut, gravida feugiat erat. Sed eu accumsan tortor. In mattis mauris ut malesuada vulputate. Nunc id est ornare nibh euismod imperdiet.
-
-Ut euismod vulputate quam et condimentum. Donec elementum felis erat, non tincidunt dolor gravida a. Nulla nunc sem, placerat quis pellentesque at, aliquet venenatis felis. Donec fermentum ipsum a risus posuere pulvinar. Ut sodales consequat varius. Fusce in nibh quis neque molestie venenatis ac vitae urna. Praesent semper id nisl eu dignissim. Maecenas imperdiet mattis justo, ut dapibus libero mattis eget.
-
-Nam eu felis non eros aliquet posuere. Proin et tortor non lectus dapibus consequat. Suspendisse sed ex turpis. Aliquam sem nibh, laoreet sit amet tincidunt non, sollicitudin sit amet lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec sollicitudin massa eu erat malesuada, interdum elementum ante tincidunt. Proin ac consectetur quam.
-
-Nam purus lorem, pretium non sem sit amet, congue imperdiet tortor. Cras tempus justo id vulputate fringilla. Proin eu nisi ultrices, venenatis nisl bibendum, aliquet est. Nunc sit amet fringilla ipsum. Phasellus nec purus justo. Duis viverra, leo consequat placerat aliquam, tortor sapien laoreet eros, quis facilisis nulla mauris et mi. Curabitur vestibulum feugiat lobortis. Cras nisl lorem, cursus et nibh quis, maximus pretium odio.
-
-Donec vulputate vestibulum hendrerit. Etiam volutpat dui eu felis tristique pharetra. Donec quis purus nulla. Morbi non rutrum magna. Duis eleifend molestie purus, sit amet tempus enim ultrices ac. Nunc ac porta nisi, dignissim porttitor augue. Vestibulum interdum tincidunt pulvinar. Donec sagittis velit purus, eget placerat tellus sagittis ut.
-
-Sed ullamcorper urna a consectetur euismod. Etiam rutrum odio vitae enim pulvinar aliquet. Nullam arcu lorem, aliquet quis fermentum dictum, accumsan et neque. Aenean et ullamcorper nisl, vel laoreet eros. Duis luctus egestas sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Quisque eleifend purus nunc, non efficitur odio hendrerit at. Morbi efficitur varius ante. Aliquam ac velit imperdiet, scelerisque leo pellentesque, pretium ex. In vel mi id odio vehicula eleifend. Vivamus eu dictum lorem. Suspendisse sit amet pharetra leo. Etiam id laoreet dui. Pellentesque elit ante, eleifend vel posuere id, porttitor id velit.
-
-Nulla non hendrerit risus. Nullam ultricies rutrum enim, lobortis posuere ipsum suscipit in. Mauris malesuada eu velit id feugiat. Fusce tortor leo, feugiat sed sapien et, ultrices pharetra purus. Quisque vitae felis sit amet justo facilisis dapibus. Suspendisse sit amet est eu arcu efficitur elementum. Suspendisse est risus, interdum vel eros ac, dignissim ultrices massa. Sed ex massa, ultricies a massa ut, varius aliquam nisl. Mauris semper vestibulum odio eget dapibus. Aenean laoreet enim pharetra semper vulputate. Nulla mauris orci, bibendum a congue vestibulum, aliquam eget odio. Phasellus ut scelerisque nibh, eu maximus tortor. Mauris convallis luctus leo, non egestas mi fermentum a. Aenean sagittis ipsum eu tincidunt sodales. Maecenas laoreet sed dolor nec imperdiet. In hac habitasse platea dictumst.
-
-Vestibulum finibus finibus magna, pretium imperdiet orci viverra non. Nam eu tellus ut lacus laoreet lacinia vitae ac quam. Aliquam efficitur ex vestibulum quam malesuada lobortis sed non urna. Nullam nec ullamcorper arcu. Quisque eleifend justo dui, id eleifend nibh faucibus eget. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque purus orci, placerat et sagittis vulputate, sollicitudin vel diam. Duis finibus pretium lorem, at hendrerit nisl tristique ut. Proin ultrices enim eu bibendum interdum. Donec felis tellus, aliquam eu enim quis, pretium dignissim sapien.
-
-Aenean ut molestie lorem. Aenean ac magna ultrices, laoreet sapien a, laoreet ipsum. In hac habitasse platea dictumst. Nullam ultricies ante sem, nec cursus nibh congue quis. Aliquam aliquam quis velit vel viverra. Maecenas vitae risus euismod, efficitur lacus at, fermentum magna. Cras laoreet in dui id pretium. Vivamus id sodales tortor. Vestibulum ultrices sem maximus lacinia ullamcorper. Pellentesque convallis interdum purus in efficitur. Nam arcu odio, vestibulum id eros non, convallis venenatis mi. Donec ante ligula, maximus eget neque eget, venenatis dictum justo. Fusce sit amet ultricies augue. Aenean feugiat suscipit sapien vel sollicitudin.
-
-Duis sed nulla a leo vestibulum consectetur. Integer vehicula mauris faucibus ligula accumsan, ut finibus felis rutrum. Nam in sagittis ante. Donec at nisl a nisi varius aliquet quis ut lectus. Integer porta enim aliquam, egestas velit ut, dictum augue. Suspendisse potenti. Fusce vulputate felis at magna ullamcorper, nec imperdiet quam porta. Nam dictum sem orci, nec pellentesque neque rhoncus vel.
-
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sit amet nunc in ligula tempus cursus ac non odio. Curabitur sed dui quis lorem semper venenatis. Pellentesque dapibus a erat eu vulputate. Fusce justo massa, mattis a dapibus nec, rutrum auctor enim. Pellentesque vestibulum aliquet neque, eget pretium mi accumsan eget. Nulla facilisi. Morbi ac hendrerit turpis. Aliquam odio urna, porttitor nec neque eu, lobortis aliquam sem. Aenean dictum molestie nulla id porttitor. Vestibulum ultrices maximus tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis id lectus feugiat, lacinia sapien at, mollis ipsum. Morbi porttitor ut dui ac cursus. Maecenas augue sapien, fringilla vitae sem vel, rutrum pulvinar ligula. Fusce elit urna, cursus vitae ante consequat, aliquet tempor odio.
-
-Morbi eget porttitor ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec eget velit sit amet ex fringilla varius. Nulla quis dictum ipsum, sed tempus metus. Curabitur eget elementum quam. Proin tempor ullamcorper dui, nec sodales risus vestibulum ac. Etiam condimentum massa et leo aliquam, et hendrerit sapien aliquet. Cras velit lectus, egestas non cursus nec, consequat gravida ligula. Phasellus vitae augue a elit posuere vulputate accumsan in ante. Phasellus et accumsan augue, quis blandit elit.
-
-Suspendisse et dolor odio. Cras interdum nisl eu erat elementum ultrices. Pellentesque lobortis massa lectus, quis placerat magna interdum nec. Sed in libero ante. Vestibulum sollicitudin arcu dolor, non maximus turpis congue eleifend. Nullam ac turpis fringilla, aliquam felis at, efficitur massa. Maecenas id felis ullamcorper, tristique orci ac, consequat quam. Pellentesque cursus, sapien eu feugiat euismod, eros quam venenatis quam, a feugiat tortor diam pharetra ligula. Sed efficitur tellus in suscipit placerat. Duis nec felis erat. Proin porta massa quis varius pellentesque. Etiam ornare justo vitae felis molestie, eu fermentum massa venenatis. Aliquam erat volutpat.
-
-Donec eu eros in magna faucibus consequat. Quisque quis nisi ut ipsum rutrum luctus. Donec pellentesque, mi sit amet ullamcorper placerat, quam nibh elementum dui, laoreet lobortis est ipsum vitae orci. Nullam vulputate quis ex non commodo. Nullam tempus elit at iaculis molestie. Aliquam id accumsan sem. Aliquam ut luctus ante. Praesent nec dui vel tellus volutpat fringilla. Maecenas molestie, mauris eu lobortis rutrum, sem leo hendrerit erat, in finibus ante purus eget lacus. Integer odio nibh, pellentesque non rhoncus non, imperdiet nec lacus. Donec nibh dui, tincidunt eu tincidunt vitae, dapibus eget magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas dignissim ac ipsum eu accumsan. Ut quis bibendum augue. Suspendisse hendrerit augue fermentum, volutpat ligula at, mattis augue.
-
-Suspendisse eget tortor purus. Morbi tristique ut tortor ac luctus. Suspendisse efficitur odio eget dapibus tristique. Duis vel augue nunc. Maecenas velit felis, viverra et euismod non, aliquam vitae orci. Nam vel sapien sed mi malesuada bibendum et ut ex. Cras erat enim, ullamcorper ultricies tristique id, posuere vel sapien. Mauris vel turpis nisl. Ut ornare molestie dui, ac ornare sapien blandit in. Phasellus quis tellus ornare, malesuada orci eget, lobortis ex. Vestibulum aliquet sem dui, sed lobortis magna varius vel. In ut ex vel lorem consequat dictum egestas non velit. Cras molestie viverra tortor, eget gravida eros porttitor ac. Suspendisse vel accumsan tellus.
-
-Quisque a augue tincidunt, sodales turpis ut, viverra lorem. Sed purus sem, vehicula quis nunc vel, tempus dignissim elit. Morbi dapibus urna enim, vel viverra tortor iaculis eu. Morbi at enim quam. Vestibulum scelerisque neque non metus pellentesque ullamcorper. In ipsum magna, iaculis sit amet venenatis at, porttitor interdum eros. Duis in purus nec lorem fermentum ultricies. Etiam est dolor, dictum vitae sollicitudin eu, semper eget purus. Aliquam sed nunc in purus dapibus ornare. Aenean sollicitudin libero sed mauris rhoncus placerat. Donec pulvinar hendrerit sapien sed blandit. Mauris ornare elementum justo, in mattis quam. Curabitur quam nulla, ultrices vel tellus id, pulvinar gravida magna. Mauris eget metus ipsum. Donec nec erat ex.
-
-Aliquam at massa sed turpis posuere eleifend vel ut urna. Nulla semper eu turpis vel suscipit. Proin tincidunt ante nec nisi ornare iaculis. Nulla facilisi. Quisque fringilla laoreet venenatis. Curabitur faucibus convallis lorem, fermentum fermentum turpis semper vel. Vivamus tempor turpis nec pulvinar euismod. Maecenas ultricies quam est, ac finibus mi pharetra sagittis. Curabitur non vestibulum quam. Proin rutrum interdum ipsum eu blandit. Suspendisse egestas ex eu ante porta volutpat.
-
-Duis ac laoreet ante. Mauris eget mi condimentum, consectetur metus quis, condimentum nisi. Proin eleifend, dolor ac ullamcorper pulvinar, enim lectus vehicula dui, sit amet ultricies augue sem a augue. Morbi lacus ligula, rutrum eget feugiat sed, posuere ac arcu. Suspendisse egestas sed erat quis luctus. Cras ultrices sagittis sodales. Cras vel nunc in.</pre>
-</div>
-<div created="20200504161121313" modified="20200505061906380" tags="" title="Lorem" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>this tiddler has a direct link to [[Example: Backlink Destination]] and appears multiple time in the [[long text]] tiddler. 
-
-Enable &quot;inbound links Transclution&quot; from $:/ak/plugins/TWCrossLinks config panel and hover over &quot;long text&quot; in the &quot;Freelinks&quot; tab below
-
-</pre>
-</div>
-<div created="20200509204407424" modified="20200509205049221" title="Plugin - Daily Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Daily Notes Bring to [[Drift]] yet another Roam feature and is built with [[Interstitial journaling|https://nesslabs.com/interstitial-journaling]] in mind
-
-$:/ak/plugins/DailyNotes 
-
-You can install it by simply drag n drop this link in your TiddlyWiki or download it from [[Github|https://github.com/akhater/Daily-Notes-for-TW5]]
-</pre>
-</div>
-<div created="20200502093906030" modified="20200502155747555" tags="" title="Plugin - TWCrosslinks" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>As requested, I have packaged the Keyword and the Cross-Links footer in a separate plugin [[TWCrossLinks|$:/ak/plugins/TWCrossLinks]]
-
-$:/ak/plugins/TWCrossLinks
-
-You can install it by just drag-n-drop the above link in your TiddlyWiki or by direct download from [[GitHub|https://github.com/akhater/TWCrossLinks]]
-
-</pre>
-</div>
-<div created="20200501224605868" modified="20200501224649965" title="Tag1" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>This is the tiddler of Tag1, even if it wasn't created you would see the same footer with the various &quot;inbound links&quot; related to this Tag (Check Tag2 for example).
-
-In this case the &quot;Tagged&quot; tab is populated</pre>
-</div>
-<div created="20200501232052520" modified="20200502100448849" tags="" title="Todo" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>~~For now I am sharing this as a &quot;complete&quot; TiddlyWiki file. However I am planning on packaging the &quot;inbound links&quot; part as a separate plugin for those who wish to use it alone~~
-
-* ''2020-05-02'' [[TWCrossLinks|Plugin - TWCrosslinks]] is now available as standalone plugin</pre>
-</div>
-<div created="20200501210858113" modified="20200504121912607" tags="" title="Welcome to Drift" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;&lt;tabs &quot;[[Drift]] [[Features]] [[Examples]] [[Todo]] [[FAQ]] [[Changelog]] [[Credits &amp; Dependencies]]  [[Feedback &amp; Suggestions]]&quot; &quot;Drift&quot;  &quot;$:/state/DriftHomeTabs&quot; &quot;tc-vertical&quot;&gt;&gt;</pre>
 </div>
 
 
