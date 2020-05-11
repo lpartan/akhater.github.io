@@ -542,9 +542,55 @@ mark.pink { background-color: #ff69b4; }
 }
 </pre>
 </div>
-<div created="20200509172404131" description="Interstitial Journaling Plugin" list="readme change.log" modified="20200510225313798" name="DailyNotes" plugin-type="plugin" title="$:/ak/plugins/DailyNotes" type="application/json" version="0.0.11" revision="0" bag="default">
+<div created="20200509172404131" description="Interstitial Journaling Plugin" list="readme change.log" modified="20200511172020511" name="DailyNotes" plugin-type="plugin" title="$:/ak/plugins/DailyNotes" type="application/json" version="0.0.15" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
+        &quot;$:/ak/plugins/DailyNotes/change.log&quot;: {
+            &quot;created&quot;: &quot;20200510091859948&quot;,
+            &quot;text&quot;: &quot;''v0.0.15'' -  2020-05-11\n\n* Visual Tweaks\n* inline Edit of entries\n\n''v0.0.11'' -  2020-05-11\n\n* Recoded from scratch\n* Cleaner code\n* Delete Icon just shows on hover\n* Different Icons for expanded and non expanded entries\n* Cleaner Daily Note tiddler easier to manually edit \n\n''v0.0.6'' -  2020-05-10\n\n* Added a way to see older Daily Notes\n\n''v0.0.4'' -  2020-05-10\n\n* Initial Release&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/change.log&quot;,
+            &quot;modified&quot;: &quot;20200511170117000&quot;
+        },
+        &quot;$:/ak/plugins/DailyNotes/KBshortcut&quot;: {
+            &quot;created&quot;: &quot;20200509171745928&quot;,
+            &quot;text&quot;: &quot;&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n  &lt;$action-navigate $to=\&quot;$:/ak/plugins/DailyNotes/ui/capture\&quot;/&gt;\n&lt;/$navigator&gt;\n&quot;,
+            &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/KBshortcut&quot;,
+            &quot;modified&quot;: &quot;20200510091739105&quot;,
+            &quot;key&quot;: &quot;((DailyNotes))&quot;
+        },
+        &quot;$:/ak/plugins/DailyNotes/readme&quot;: {
+            &quot;created&quot;: &quot;20200510092225619&quot;,
+            &quot;text&quot;: &quot;[[Daily Notes|https://github.com/akhater/Daily-Notes-for-TW5]] brings  interstitial journaling to TiddlyWiki\n\n''Usage''\n\n* Keyboard shortcut Alt+Q by default\n* Create a tiddler and put the below in it to show the interface without shortcut (e.g. for mobile use)\n** `` {{$:/ak/plugins/DailyNotes/ui/capture}} ``\n&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/readme&quot;,
+            &quot;modified&quot;: &quot;20200510092554773&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;revision&quot;: &quot;48&quot;,
+            &quot;bag&quot;: &quot;default&quot;
+        },
+        &quot;$:/ak/plugins/DailyNotes/stylesheet&quot;: {
+            &quot;created&quot;: &quot;20200509183459884&quot;,
+            &quot;text&quot;: &quot;input.dn-input.input-large { width: 100%; padding: .5em 1em; font-size: 1.1em; }\n.dn-label { display: block; text-align: right; font-size: .8em; opacity: .6; }\ninput.dn-input:focus { border-color: rgb(255, 201, 102); }\n\n.DN-entries .DN-deleteButton { \n opacity: 0; \n}\n\n.DN-entries:hover .DN-deleteButton { \n opacity: 1;   \n fill: grey;\n}\n\n.DN-entries:hover .DN-deleteButton:hover { \nfill: #c70000 ;  \n}\n\n.DN-entries .DN-editButton { \nopacity: 0; \n}\n\n\n.DN-entries:hover .DN-editButton { \nopacity: 1;  \n}\n\n.DN-editButton:hover { \nfill: #228c22 ;  \n}\n\n.DN-check-edit input{display:none;}\n.DN-check-edit svg{fill:grey;height:1em;width:1em;curser:pointer;}\n.DN-check-edit:hover svg{ fill:green; }&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;32&quot;,
+            &quot;type&quot;: &quot;text/css&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/stylesheet&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;modified&quot;: &quot;20200511165058276&quot;
+        },
+        &quot;$:/ak/plugins/DailyNotes/ui/capture&quot;: {
+            &quot;created&quot;: &quot;20200509164956768&quot;,
+            &quot;text&quot;: &quot;\\define get-origEntry() $(entryTime)$~$(entryData)$ &lt;br /&gt;\n\\define get-edittedEntry() $(trimmedEdittedEntry)$ &lt;br /&gt;\n\n\\define show-deleteButton() \n&lt;span class=\&quot;DN-entries DN-deleteButton\&quot;&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Delete Entry\&quot; set={{$:/temp/DN-Selection}} setTo={{{ [&lt;Content&gt;split&lt;get-origEntry&gt;join[]] }}}  &gt;\n    {{$:/core/images/delete-button}}\n&lt;/$button&gt;&lt;/span&gt;\n\\end\n\n\\define start-entryEdit()\n&lt;$action-setfield $tiddler=\&quot;$:/temp/DN-editEntry/$(entryData)$\&quot;  text=\&quot;$(entryTime)$~$(entryData)$\&quot; /&gt; \n\\end\n\n\\define end-entryEdit()\n&lt;$set name=edittedEntry tiddler=\&quot;$:/temp/DN-editEntry/$(entryData)$\&quot;&gt;\n    &lt;$set name=\&quot;trimmedEdittedEntry\&quot; value={{{ [&lt;edittedEntry&gt;trim[]] }}} &gt;                  \n        &lt;$action-setfield $tiddler={{$:/temp/DN-Selection}} $field=\&quot;text\&quot; $value={{{ [&lt;Content&gt;split&lt;get-origEntry&gt;join&lt;get-edittedEntry&gt;] }}} /&gt;\n    &lt;/$set&gt;\n&lt;/$set&gt;\n\\end\n\n\\define show-editButton() \n&lt;$vars state=&lt;&lt;qualify \&quot;\&quot;\&quot;$:/temp/DN-state/$(entryData)$\&quot;\&quot;\&quot;&gt;&gt; &gt;\n    &lt;span class=\&quot;DN-entries DN-editButton\&quot;&gt;\n        &lt;$checkbox tiddler=&lt;&lt;state&gt;&gt; field=\&quot;text\&quot; checked=\&quot;edit\&quot; unchecked=\&quot;\&quot; uncheckactions=&lt;&lt;end-entryEdit&gt;&gt; checkactions=&lt;&lt;start-entryEdit&gt;&gt; class=\&quot;DN-check-edit\&quot;&gt;{{$:/core/images/edit-button}}&lt;/$checkbox&gt;\n    &lt;/span&gt;\n    &lt;$reveal state=&lt;&lt;state&gt;&gt; type=\&quot;match\&quot; text=\&quot;edit\&quot;&gt;\n        &lt;div class=\&quot;tc-popup tc-tiddler-info\&quot;&gt;\n            &lt;$edit-text tiddler=\&quot;$:/temp/DN-editEntry/$(entryData)$\&quot; field=\&quot;text\&quot; class=\&quot;tc-edit-texteditor\&quot; tag=input  /&gt;\n        &lt;/div&gt;\n    &lt;/$reveal&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define DN_ifTiddlerNotExists()\n&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Expand Entry\&quot; &gt;\n    {{$:/core/images/clone-button}}\n    &lt;$action-createtiddler $basetitle=&lt;&lt;entryData&gt;&gt; text=\&quot;\&quot;\&quot;[[$(today)$]] @ $(entryTime)$\&quot;\&quot;\&quot;  /&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;entryData&gt;&gt; /&gt;\n&lt;/$button&gt;&lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-editButton&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n\\end\n\n\\define DN_ifTiddlerExists()\n&lt;$list filter=\&quot;[title&lt;entryData&gt;] +[has[title]]\&quot;  emptyMessage=&lt;&lt;DN_ifTiddlerNotExists&gt;&gt; &gt;\n    &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Zoom to Entry\&quot; &gt;\n        {{$:/core/images/link}}\n        &lt;$action-navigate $to=&lt;&lt;entryData&gt;&gt; /&gt;\n    &lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-editButton&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n&lt;/$list&gt;\n\\end\n\n\n\\define get-updatedText() $(currentContent)$ ''$(timestamp)$''~$(add)$ &lt;br /&gt;\n\n\n&lt;$set name=today value=&lt;&lt;now YYYY-0MM-0DD&gt;&gt; &gt;\n    &lt;h2&gt; &lt;&lt;today&gt;&gt; &lt;$button class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Manually edit Today's notes\&quot;&gt;{{$:/core/images/edit-button}}&lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;today&gt;&gt; /&gt;&lt;/$button&gt;&lt;/h2&gt;\n    &lt;$keyboard key=\&quot;enter\&quot;&gt; \n        &lt;$edit-text class=\&quot;dn-input input-large\&quot;  tiddler=\&quot;$:/temp/Append\&quot; field=\&quot;newEntry\&quot;  placeholder=\&quot;Free your mind, dump it here...\&quot; focus=\&quot;true\&quot;/&gt;\n        &lt;label class=\&quot;dn-label\&quot;&gt;Press ⏎ to capture&lt;/label&gt;\n        &lt;$set  name=\&quot;timestamp\&quot; value=&lt;&lt;now \&quot;0hh:0mm\&quot;&gt;&gt;  &gt;\n            &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n                &lt;$set name=\&quot;add\&quot; value={{{ [{$:/temp/Append!!newEntry}trim[]] }}} &gt;\n                    &lt;$action-setfield $tiddler=&lt;&lt;today&gt;&gt;  text=&lt;&lt;get-updatedText&gt;&gt; /&gt; \n                    &lt;$fieldmangler tiddler=&lt;&lt;today&gt;&gt; &gt;\n                        &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=\&quot;DailyNotes\&quot;  /&gt; \n                    &lt;/$fieldmangler&gt;\n                    &lt;$action-deletefield $tiddler=\&quot;$:/temp/Append\&quot; newEntry /&gt;\n                    &lt;$action-setfield $tiddler=\&quot;$:/temp/DN-Selection\&quot; text=&lt;&lt;today&gt;&gt; /&gt;\n                &lt;/$set&gt;\n            &lt;/$set&gt;\n        &lt;/$set&gt;\n    &lt;/$keyboard&gt;\n\n    &lt;h3&gt; Entries of the: \n        &lt;$select tiddler=\&quot;$:/temp/DN-Selection\&quot; default=\&quot;\&quot; &gt;  \n            &lt;$list filter='[all[]tag[DailyNotes]!sort[title]]' &gt; \n                &lt;option value=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$view field='title'/&gt;&lt;/option&gt;\n            &lt;/$list&gt;\n        &lt;/$select&gt;\n    &lt;/h3&gt;\n    &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n        &lt;$set name=Content tiddler={{$:/temp/DN-Selection}} emptyValue=\&quot;\&quot; &gt;\n            &lt;$list filter=\&quot;[&lt;Content&gt;split[&lt;br /&gt;]!is[blank]]\&quot; variable=\&quot;entry\&quot;&gt;\n                &lt;$vars entryTime={{{ [&lt;entry&gt;split[~]first[]] }}}  entryData={{{ [&lt;entry&gt;split[~]butfirst[]trim[]] }}} &gt;\n                    &lt;div class=\&quot;DN-entries\&quot;&gt;&lt;&lt;DN_ifTiddlerExists&gt;&gt;&lt;/div&gt;\n                &lt;/$vars&gt;\n            &lt;/$list&gt;\n        &lt;/$set&gt;\n    &lt;/$set&gt;\n&lt;/$set&gt;&quot;,
+            &quot;bag&quot;: &quot;default&quot;,
+            &quot;revision&quot;: &quot;13&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/ui/capture&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;modified&quot;: &quot;20200511171858792&quot;,
+            &quot;caption&quot;: &quot;Daily Notes&quot;
+        },
         &quot;$:/config/ShortcutInfo/DailyNotes&quot;: {
             &quot;created&quot;: &quot;20200509171443220&quot;,
             &quot;text&quot;: &quot;Calls the Daily Notes Tiddler&quot;,
@@ -558,52 +604,6 @@ mark.pink { background-color: #ff69b4; }
             &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/config/shortcuts/DailyNotes&quot;,
             &quot;modified&quot;: &quot;20200509171556646&quot;
-        },
-        &quot;$:/ak/plugins/DailyNotes/KBshortcut&quot;: {
-            &quot;created&quot;: &quot;20200509171745928&quot;,
-            &quot;text&quot;: &quot;&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n  &lt;$action-navigate $to=\&quot;$:/ak/plugins/DailyNotes/ui/capture\&quot;/&gt;\n&lt;/$navigator&gt;\n&quot;,
-            &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
-            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/KBshortcut&quot;,
-            &quot;modified&quot;: &quot;20200510091739105&quot;,
-            &quot;key&quot;: &quot;((DailyNotes))&quot;
-        },
-        &quot;$:/ak/plugins/DailyNotes/ui/capture&quot;: {
-            &quot;created&quot;: &quot;20200509164956768&quot;,
-            &quot;text&quot;: &quot;\\define get-origEntry() $(entryTime)$~$(entryData)$ &lt;br /&gt;\n\n\\define show-deleteButton() \n&lt;span class=\&quot;DN-entries DN-deleteButton\&quot;&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Delete Entry\&quot; set={{$:/temp/DN-Selection}} setTo={{{ [&lt;Content&gt;split&lt;get-origEntry&gt;join[]] }}}  &gt;\n    {{$:/core/images/delete-button}}\n&lt;/$button&gt;&lt;/span&gt;\n\\end\n\n\\define DN_ifTiddlerNotExists()\n&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Expand Entry\&quot; &gt;\n    {{$:/core/images/clone-button}}\n    &lt;$action-createtiddler $basetitle=&lt;&lt;entryData&gt;&gt; text=\&quot;\&quot;\&quot;[[$(today)$]] @ $(entryTime)$\&quot;\&quot;\&quot;  /&gt;\n    &lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;entryData&gt;&gt; /&gt;\n&lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n\\end\n\n\\define DN_ifTiddlerExists()\n&lt;$list filter=\&quot;[title&lt;entryData&gt;] +[has[title]]\&quot;  emptyMessage=&lt;&lt;DN_ifTiddlerNotExists&gt;&gt; &gt;\n    &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; tooltip=\&quot;Zoom to Entry\&quot; &gt;\n        {{$:/core/images/link}}\n        &lt;$action-navigate $to=&lt;&lt;entryData&gt;&gt; /&gt;\n    &lt;/$button&gt; &lt;&lt;entryTime&gt;&gt; &lt;&lt;entryData&gt;&gt; &lt;&lt;show-deleteButton&gt;&gt; &lt;br /&gt;\n&lt;/$list&gt;\n\\end\n\n\n\\define get-updatedText() $(currentContent)$ ''$(timestamp)$''~$(add)$ &lt;br /&gt;\n\n\n&lt;$set name=today value=&lt;&lt;now YYYY-0MM-0DD&gt;&gt; &gt;\n    &lt;h2&gt; &lt;&lt;today&gt;&gt; &lt;$button class=\&quot;tc-btn-invisible\&quot; tooltip=\&quot;Manually edit Today's notes\&quot;&gt;{{$:/core/images/edit-button}}&lt;$action-sendmessage $message=\&quot;tm-edit-tiddler\&quot; $param=&lt;&lt;today&gt;&gt; /&gt;&lt;/$button&gt;&lt;/h2&gt;\n    &lt;$keyboard key=\&quot;enter\&quot;&gt; \n        &lt;$edit-text class=\&quot;dn-input input-large\&quot;  tiddler=\&quot;$:/temp/Append\&quot; field=\&quot;newEntry\&quot;  placeholder=\&quot;Free your mind, dump it here...\&quot; focus=\&quot;true\&quot;/&gt;\n        &lt;label class=\&quot;dn-label\&quot;&gt;Press ⏎ to capture&lt;/label&gt;\n        &lt;$set  name=\&quot;timestamp\&quot; value=&lt;&lt;now \&quot;0hh:0mm\&quot;&gt;&gt;  &gt;\n            &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n                &lt;$set name=\&quot;add\&quot; value={{{ [{$:/temp/Append!!newEntry}trim[]] }}} &gt;\n                    &lt;$action-setfield $tiddler=&lt;&lt;today&gt;&gt;  text=&lt;&lt;get-updatedText&gt;&gt; /&gt; \n                    &lt;$fieldmangler tiddler=&lt;&lt;today&gt;&gt; &gt;\n                        &lt;$action-sendmessage $message=\&quot;tm-add-tag\&quot; $param=\&quot;DailyNotes\&quot;  /&gt; \n                    &lt;/$fieldmangler&gt;\n                    &lt;$action-deletefield $tiddler=\&quot;$:/temp/Append\&quot; newEntry /&gt;\n                    &lt;$action-setfield $tiddler=\&quot;$:/temp/DN-Selection\&quot; text=&lt;&lt;today&gt;&gt; /&gt;\n                &lt;/$set&gt;\n            &lt;/$set&gt;\n        &lt;/$set&gt;\n    &lt;/$keyboard&gt;\n\n    &lt;h3&gt; Entries of the: \n        &lt;$select tiddler=\&quot;$:/temp/DN-Selection\&quot; default=\&quot;\&quot; &gt;  \n            &lt;$list filter='[all[]tag[DailyNotes]!sort[title]]' &gt; \n                &lt;option value=&lt;&lt;currentTiddler&gt;&gt; &gt;&lt;$view field='title'/&gt;&lt;/option&gt;\n            &lt;/$list&gt;\n        &lt;/$select&gt;\n    &lt;/h3&gt;\n    &lt;$set name=currentContent  tiddler=&lt;&lt;today&gt;&gt; &gt;\n        &lt;$set name=Content tiddler={{$:/temp/DN-Selection}} emptyValue=\&quot;\&quot; &gt;\n            &lt;$list filter=\&quot;[&lt;Content&gt;split[&lt;br /&gt;]!is[blank]]\&quot; variable=\&quot;entry\&quot;&gt;\n                &lt;$vars entryTime={{{ [&lt;entry&gt;split[~]first[]] }}}  entryData={{{ [&lt;entry&gt;split[~]butfirst[]trim[]] }}} &gt;\n                    &lt;div class=\&quot;DN-entries\&quot;&gt;\n                        &lt;&lt;DN_ifTiddlerExists&gt;&gt;\n                    &lt;/div&gt;\n                &lt;/$vars&gt;\n            &lt;/$list&gt;\n        &lt;/$set&gt;\n    &lt;/$set&gt;\n&lt;/$set&gt;&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;63&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/ui/capture&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200510225059676&quot;,
-            &quot;caption&quot;: &quot;Daily Notes&quot;
-        },
-        &quot;$:/ak/plugins/DailyNotes/stylesheet&quot;: {
-            &quot;text&quot;: &quot;input.dn-input.input-large { width: 100%; padding: .5em 1em; font-size: 1.1em; }\n.dn-label { display: block; text-align: right; font-size: .8em; opacity: .6; }\ninput.dn-input:focus { border-color: rgb(255, 201, 102); }\n\n.DN-entries .DN-deleteButton { \nopacity: 0; \ntext-align: right;\n}\n.DN-entries:hover .DN-deleteButton { \nopacity: 1;  \nfill: #c70000 }&quot;,
-            &quot;bag&quot;: &quot;default&quot;,
-            &quot;revision&quot;: &quot;6&quot;,
-            &quot;type&quot;: &quot;text/css&quot;,
-            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/stylesheet&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;modified&quot;: &quot;20200510214121523&quot;,
-            &quot;created&quot;: &quot;20200509183459884&quot;
-        },
-        &quot;$:/ak/plugins/DailyNotes/change.log&quot;: {
-            &quot;created&quot;: &quot;20200510091859948&quot;,
-            &quot;text&quot;: &quot;''v0.0.11'' -  2020-05-11\n\n* Recoded from scratch\n* Cleaner code\n* Delete Icon just shows on hover\n* Different Icons for expanded and non expanded entries\n* Cleaner Daily Note tiddler easier to manually edit \n\n''v0.0.6'' -  2020-05-10\n\n* Added a way to see older Daily Notes\n\n''v0.0.4'' -  2020-05-10\n\n* Initial Release&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/change.log&quot;,
-            &quot;modified&quot;: &quot;20200510225259830&quot;
-        },
-        &quot;$:/ak/plugins/DailyNotes/readme&quot;: {
-            &quot;created&quot;: &quot;20200510092225619&quot;,
-            &quot;text&quot;: &quot;[[Daily Notes|https://github.com/akhater/Daily-Notes-for-TW5]] brings  interstitial journaling to TiddlyWiki\n\n''Usage''\n\n* Keyboard shortcut Alt+Q by default\n* Create a tiddler and put the below in it to show the interface without shortcut (e.g. for mobile use)\n** `` {{$:/ak/plugins/DailyNotes/ui/capture}} ``\n&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;title&quot;: &quot;$:/ak/plugins/DailyNotes/readme&quot;,
-            &quot;modified&quot;: &quot;20200510092554773&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;revision&quot;: &quot;48&quot;,
-            &quot;bag&quot;: &quot;default&quot;
         }
     }
 }</pre>
@@ -10565,7 +10565,7 @@ toolbar-done-button:
 untagged-background: &lt;&lt;colour very-muted-foreground&gt;&gt;
 very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
 </div>
-<div created="20190202142805411" creator="jd" modified="20200510221030495" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190202142805411" creator="jd" modified="20200511172341826" modifier="jd" title="$:/palette" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>$:/palettes/Twilight</pre>
 </div>
 <div caption="{{$:/core/images/advanced-search-button}} search" created="20171122115403541" creator="JD" description="Toggle searchbar visibility" modified="20200430205248593" modifier="JD" tags="$:/tags/jd/mobbutton" title="$:/plugins/jd/mob/button/search" type="text/vnd.tiddlywiki" revision="0" bag="default">
