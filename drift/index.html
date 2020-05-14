@@ -335,12 +335,6 @@ Error message and password prompt
 
 <li>$:/SplashScreen</li>
 
-<li>$:/state/DriftHomeTabs-651803151</li>
-
-<li>$:/state/edit/references-291195725</li>
-
-<li>$:/state/edit/references-557571601</li>
-
 <li>$:/state/sidebar</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
@@ -558,12 +552,13 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20200514050011521" keywords="Week" modified="20200514053325155" tags="$:/tags/Macro" title="$:/ak/drift/macros/cross-list-links-draggable" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20200514050011521" keywords="Week" modified="20200514092718660" tags="$:/tags/Macro" title="$:/ak/drift/macros/cross-list-links-draggable" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>\define cross-list-links-draggable-drop-actions()
 &lt;$vars sourceTiddler={{{ [&lt;actionTiddler&gt;listed[]] +[limit[1]]}}}&gt;
-    &lt;$action-listops $tiddler=&lt;&lt;sourceTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;-[&lt;actionTiddler&gt;]&quot;        /&gt;
+    &lt;$list filter=&quot;[&lt;sourceTiddler&gt;] -[&lt;targetTiddler&gt;]&quot;&gt;
+        &lt;$action-listops $tiddler=&lt;&lt;sourceTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;-[&lt;actionTiddler&gt;]&quot;        /&gt;
+    &lt;/$list&gt;
     &lt;$action-listops $tiddler=&lt;&lt;targetTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
-&lt;&lt;sourceTiddler&gt;&gt;
 &lt;/$vars&gt;
 \end
 
@@ -607,7 +602,7 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 \end
 </pre>
 </div>
-<div created="20200514051115471" keywords="[[Example: Spoiler]]" modified="20200514053356782" tags="$:/tags/Macro" title="$:/ak/drift/macros/spoiler" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20200514051115471" keywords="[[Example: Spoiler]]" modified="20200514053357027" tags="$:/tags/Macro" title="$:/ak/drift/macros/spoiler" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define spoiler(text)
 &lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/temp/TWSpoilerState&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot; default=&quot;hide&quot;&gt;
    &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/temp/TWSpoilerState&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;[...]&lt;/$button&gt; 
@@ -11039,19 +11034,10 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200514053557462" modified="20200514053559240" title="$:/state/DriftHomeTabs-651803151" revision="2" bag="default">
-<pre>Drift</pre>
-</div>
-<div created="20200514053303530" modified="20200514053303530" title="$:/state/edit/references-291195725" revision="1" bag="default">
-<pre>show</pre>
-</div>
-<div created="20200514053350173" modified="20200514053350173" title="$:/state/edit/references-557571601" revision="1" bag="default">
-<pre>show</pre>
-</div>
-<div created="20200514053553853" modified="20200514053553853" title="$:/state/sidebar" revision="1" bag="default">
+<div created="20200514092820573" modified="20200514092820573" title="$:/state/sidebar" revision="1" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200514053232151" modified="20200514053550485" title="$:/state/tab/sidebar--595412856" revision="2" bag="default">
+<div created="20200514092703559" modified="20200514092802895" title="$:/state/tab/sidebar--595412856" revision="2" bag="default">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
@@ -11069,7 +11055,7 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div created="20200514053234443" list="[[Welcome to Drift]]" modified="20200514053533243" title="$:/StoryList" revision="25" bag="default">
+<div created="20200514092710006" list="[[Welcome to Drift]]" modified="20200514092740077" title="$:/StoryList" revision="11" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12242,7 +12228,7 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 <div created="20200510210024272" modified="20200511171934906" tags="DailyNotes" title="2020-05-11" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre> ''02:30''~Entry Example &lt;br /&gt; ''02:33''~&lt;- Click on the plus sign to create a tiddler associated with this entry &lt;br /&gt; ''03:59''~Hover over me and delete the trash button -&gt; &lt;br /&gt; ''04:55''~&lt;- This icons indicates that this entry has an associated tiddler, click on it to navigate &lt;br /&gt;''20:12''~You can also test the edit function by using the edit button on this side too -&gt; &lt;br /&gt;</pre>
 </div>
-<div created="20200502114035466" modified="20200514053510260" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20200502114035466" modified="20200514053510340" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>''v0.0.30'' - 2020-05-14
 
 * Added [[$:/ak/drift/macros/cross-list-links-draggable]] macro
@@ -12382,7 +12368,7 @@ Drift got you covered</pre>
 <div created="20200502083645471" modified="20200502083738332" tags="" title="Example: No Inbound links" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>This Tiddler has no footer since it is not referenced anywhere else in [[Drift]]</pre>
 </div>
-<div created="20200514051209272" modified="20200514053542985" tags="" title="Example: Spoiler" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20200514051209272" modified="20200514053543067" tags="" title="Example: Spoiler" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A way to make a portion of text in your tiddlers  collapsible with the [[$:/ak/drift/macros/spoiler]] macro : &lt;&lt;spoiler text:&quot;hey you found me&quot;&gt;&gt; the text will be revealed by clicking on the 3 dots </pre>
 </div>
 <div created="20200501224438750" modified="20200501224535930" tags="Tag1 Tag2" title="Example: Tags Source" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12424,7 +12410,7 @@ Just hover on the above link</pre>
 * Fixed in version 0.0.6, found under Control Panel -&gt; Appearances -&gt; Drift Tweaks
 </pre>
 </div>
-<div created="20200501214207050" modified="20200514053436257" tags="" title="Features" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20200501214207050" modified="20200514053436343" tags="" title="Features" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>*[X] Shows created and Updated time of a Tiddler
 *[X] Advanced Search ([[Theme Feature|Credits &amp; Dependencies]])
 *[X] Show most recent tiddlers if all tiddlers are closed ([[Theme Feature|Credits &amp; Dependencies]])
@@ -12558,10 +12544,10 @@ Reordering inside the same list is still possible
 &lt;&lt;cross-list-links-draggable tiddler:WeekendDays&gt;&gt;
 </pre>
 </div>
-<div created="20200513194128813" keywords="WeekendDays Week" list="Monday Tuesday Thursday Wednesday Friday" modified="20200514050704059" title="WeekDays" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200513194128813" keywords="WeekendDays Week" list="Monday Tuesday Thursday Wednesday Friday" modified="20200514092800894" title="WeekDays" type="text/vnd.tiddlywiki" revision="7" bag="default">
 <pre>Containing Weekdays in the list field to test drag and drop feature</pre>
 </div>
-<div created="20200513194532807" keywords="WeekDays Week" list="Saturday Sunday" modified="20200514050704150" title="WeekendDays" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200513194532807" keywords="WeekDays Week" list="Saturday Sunday" modified="20200514092800892" title="WeekendDays" type="text/vnd.tiddlywiki" revision="4" bag="default">
 <pre>Containing Weekend Days in the list field to test drag and drop feature</pre>
 </div>
 <div created="20200501210858113" modified="20200504121912607" tags="" title="Welcome to Drift" type="text/vnd.tiddlywiki" revision="0" bag="default">

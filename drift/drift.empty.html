@@ -463,12 +463,13 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20200514050011521" keywords="Week" modified="20200514053325363" tags="$:/tags/Macro" title="$:/ak/drift/macros/cross-list-links-draggable" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200514050011521" keywords="Week" modified="20200514092718704" tags="$:/tags/Macro" title="$:/ak/drift/macros/cross-list-links-draggable" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define cross-list-links-draggable-drop-actions()
 &lt;$vars sourceTiddler={{{ [&lt;actionTiddler&gt;listed[]] +[limit[1]]}}}&gt;
-    &lt;$action-listops $tiddler=&lt;&lt;sourceTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;-[&lt;actionTiddler&gt;]&quot;        /&gt;
+    &lt;$list filter=&quot;[&lt;sourceTiddler&gt;] -[&lt;targetTiddler&gt;]&quot;&gt;
+        &lt;$action-listops $tiddler=&lt;&lt;sourceTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;-[&lt;actionTiddler&gt;]&quot;        /&gt;
+    &lt;/$list&gt;
     &lt;$action-listops $tiddler=&lt;&lt;targetTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
-&lt;&lt;sourceTiddler&gt;&gt;
 &lt;/$vars&gt;
 \end
 
