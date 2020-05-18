@@ -243,8 +243,6 @@ Error message and password prompt
 
 <li>$:/ak/plugins/TWCrossLinks</li>
 
-<li>$:/ak/plugins/TWCrossLinks/config/default</li>
-
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
 <li>$:/config/EmptyStoryMessage</li>
@@ -305,8 +303,6 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
-<li>$:/Import</li>
-
 <li>$:/isEncrypted</li>
 
 <li>$:/jd/palette/C8Dark</li>
@@ -331,7 +327,19 @@ Error message and password prompt
 
 <li>$:/SplashScreen</li>
 
+<li>$:/state/DriftHomeTabs-651803151</li>
+
+<li>$:/state/plugin-info--1700987158-$:/ak/plugins/TWCrossLinks--2091084576</li>
+
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab--1963855381</li>
+
+<li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-97055648</li>
+
+<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/status/IsAnonymous</li>
 
@@ -550,7 +558,7 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 &lt;/$reveal&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20200518090028282" description="Collect. Organize. Grow. your ideas" list="changelog" modified="20200518124527040" name="Drift" plugin-priority="1" plugin-type="plugin" tags="" title="$:/ak/drift" type="application/json" version="0.1.0" revision="1" bag="default">
+<div created="20200518090028282" description="Collect. Organize. Grow. your ideas" list="changelog" modified="20200518125614149" name="Drift" plugin-priority="1" plugin-type="plugin" tags="" title="$:/ak/drift" type="application/json" version="0.1.0" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/ak/drift/macros/cross-list-links-draggable&quot;: {
@@ -729,18 +737,18 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
     &quot;2020-05-18~''20:27''I support not todo lists&quot;: &quot;&quot;
 }</pre>
 </div>
-<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200518121837291" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.1.17" revision="0" bag="default">
+<div created="20200502092707287" description="Discover all your intra tiddlers links" list="config readme change.log" modified="20200518215422440" name="TWCrossLinks" plugin-type="plugin" tags="" title="$:/ak/plugins/TWCrossLinks" type="application/json" version="0.1.18" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;: {
             &quot;created&quot;: &quot;20200429195808011&quot;,
-            &quot;text&quot;: &quot;{\n    \&quot;DefaultFoldData\&quot;: \&quot;show\&quot;,\n    \&quot;DefaultTab\&quot;: \&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;,\n    \&quot;TranscludeInboundLinks\&quot;: \&quot;true\&quot;,\n    \&quot;HideInboundTitle\&quot;: \&quot;false\&quot;\n}&quot;,
+            &quot;text&quot;: &quot;{\n    \&quot;DefaultFoldData\&quot;: \&quot;show\&quot;,\n    \&quot;DefaultTab\&quot;: \&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;,\n    \&quot;TranscludeInboundLinks\&quot;: \&quot;true\&quot;,\n    \&quot;HideInboundTitle\&quot;: \&quot;false\&quot;,\n    \&quot;UseFullMatch4Freelinks\&quot;: \&quot;false\&quot;\n}&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;application/json&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config/default&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200518121726843&quot;
+            &quot;modified&quot;: &quot;20200518215112057&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;: {
             &quot;created&quot;: &quot;20200429182330136&quot;,
@@ -755,13 +763,13 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/freelinks&quot;: {
             &quot;created&quot;: &quot;20200430051330741&quot;,
-            &quot;text&quot;: &quot;\\define searchInField(field, for, ci)\n&lt;$list filter=\&quot;[regexp:$field$[\\b$for$\\b$ci$]] -[all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]]\&quot; emptyMessage=\&quot;No freelinks to this tiddler\&quot; \n variable=result&gt;\n    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[true]]\&quot; variable=var1&gt;\n        &lt;div class=\&quot;tc-menu-list-item\&quot;&gt; &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt; &lt;/div&gt; \n    &lt;/$list&gt;\n    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[false]]\&quot; variable=var1&gt;\n        &lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n            &lt;div class=\&quot;trans-container\&quot;&gt;\n                &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt;\n                &lt;span class=\&quot;trans-content\&quot;&gt;  &lt;$context term=&lt;&lt;currentTiddler&gt;&gt; tiddler=&lt;&lt;result&gt;&gt; /&gt; &lt;/span&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/$list&gt;\n&lt;/$list&gt;\n\\end\n\n\n&lt;$macrocall $name=\&quot;searchInField\&quot; field=\&quot;title\&quot; for={{!!title}} ci=\&quot;(?i)\&quot;/&gt;\n&lt;$macrocall $name=\&quot;searchInField\&quot; field=\&quot;text\&quot; for={{!!title}} ci=\&quot;(?i)\&quot;/&gt;&quot;,
+            &quot;text&quot;: &quot;\\define fullMatchPattern()\n\\b$(currentTiddler)$\\b(?i)\n\\end\n\n\\define PartialMatchPattern()\n$(currentTiddler)$(?i)\n\\end\n\n&lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[UseFullMatch4Freelinks]match[true]]\&quot; variable=none&gt;\n    &lt;$set name=pattern value=&lt;&lt;fullMatchPattern&gt;&gt; &gt;\n        &lt;$list filter=\&quot;[regexp:title&lt;pattern&gt;] [regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]]\&quot; emptyMessage=\&quot;No freelinks to this tiddler\&quot; variable=result&gt;\n            &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[true]]\&quot; variable=var1&gt;\n                &lt;div class=\&quot;tc-menu-list-item\&quot;&gt; &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt; &lt;/div&gt; \n            &lt;/$list&gt;\n            &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[false]]\&quot; variable=var1&gt;\n                &lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n                    &lt;div class=\&quot;trans-container\&quot;&gt;\n                        &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt;\n                        &lt;span class=\&quot;trans-content\&quot;&gt;  &lt;$context term=&lt;&lt;currentTiddler&gt;&gt; tiddler=&lt;&lt;result&gt;&gt; /&gt; &lt;/span&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            &lt;/$list&gt;\n        &lt;/$list&gt;\n    &lt;/$set&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[UseFullMatch4Freelinks]match[false]]\&quot; variable=none&gt;\n    &lt;$set name=pattern value=&lt;&lt;PartialMatchPattern&gt;&gt; &gt;\n        &lt;$list filter=\&quot;[regexp:title&lt;pattern&gt;] [regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]]\&quot; emptyMessage=\&quot;No freelinks to this tiddler\&quot; variable=result&gt;\n            &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[true]]\&quot; variable=var1&gt;\n                &lt;div class=\&quot;tc-menu-list-item\&quot;&gt; &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt; &lt;/div&gt; \n            &lt;/$list&gt;\n            &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[TranscludeInboundLinks]] -[[false]]\&quot; variable=var1&gt;\n                &lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n                    &lt;div class=\&quot;trans-container\&quot;&gt;\n                        &lt;$link to=&lt;&lt;result&gt;&gt; &gt;&lt;$view tiddler=&lt;&lt;result&gt;&gt; field=title&gt; &lt;/$view&gt;&lt;/$link&gt;\n                        &lt;span class=\&quot;trans-content\&quot;&gt;  &lt;$context term=&lt;&lt;currentTiddler&gt;&gt; tiddler=&lt;&lt;result&gt;&gt; /&gt; &lt;/span&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n            &lt;/$list&gt;\n        &lt;/$list&gt;\n    &lt;/$set&gt;\n&lt;/$list&gt;&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/freelinks&quot;,
             &quot;tags&quot;: &quot;$:/tags/TWCrossLinks&quot;,
-            &quot;modified&quot;: &quot;20200518073458180&quot;,
+            &quot;modified&quot;: &quot;20200518214050177&quot;,
             &quot;caption&quot;: &quot;Freelinks&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/core/keywords&quot;: {
@@ -788,13 +796,13 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
         },
         &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;: {
             &quot;created&quot;: &quot;20200430143629582&quot;,
-            &quot;text&quot;: &quot;\\define regexpattern()\n\\b$(currentTiddler)$\\b(?i)\n\\end\n\\define showFooterTabs() \n&lt;span class=\&quot;TWCrossLinksFooter\&quot;&gt;\n    &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinksSegment]!has[draft.of]] [[$:/ak/plugins/TWCrossLinks/ui/tabs]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;&gt; &lt;/$list&gt;\n&lt;/span&gt;\n\\end\n\n&lt;!--Show references Backlinks/Keywords/Tags/Freelinks--&gt;\n&lt;$set name=\&quot;text-pattern\&quot; value=&lt;&lt;regexpattern&gt;&gt;&gt;\n    &lt;$list filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [regexp:text&lt;text-pattern&gt;] [regexp:title&lt;text-pattern&gt;] [all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]] +[limit[1]]\&quot; variable=none&gt;\n        &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot;&gt;\n            &lt;span class=\&quot;hideprint\&quot;&gt;\n                &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[HideInboundTitle]] -[[true]]\&quot; variable=conf&gt;\n                    &lt;hr /&gt;\n                    &lt;span style=\&quot;font-size:0.85em\&quot; &gt;\n                        //&lt;$count filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [regexp:text&lt;text-pattern&gt;] [regexp:title&lt;text-pattern&gt;] [all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]]\&quot; /&gt;  References:// \n                    &lt;/span&gt;\n                    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[DefaultFoldData]]\&quot; variable=DefaultFoldState&gt;\n                        &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                            &lt;$button  class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    \n                        &lt;/$reveal&gt;\n                        &lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                            &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot; &gt;{{$:/core/images/fold-button}}&lt;/$button&gt; \n                            &lt;&lt;showFooterTabs&gt;&gt;\n                        &lt;/$reveal&gt;\n                    &lt;/$list&gt;\n                &lt;/$list&gt;\n                &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[HideInboundTitle]] -[[false]]\&quot; variable=conf&gt;\n                    &lt;&lt;showFooterTabs&gt;&gt;\n                &lt;/$list&gt;\n            &lt;/span&gt;\n        &lt;/$reveal&gt;\n    &lt;/$list&gt;\n&lt;/$set&gt;\n&quot;,
+            &quot;text&quot;: &quot;\\define fullMatchPattern()\n\\b$(currentTiddler)$\\b(?i)\n\\end\n\n\\define PartialMatchPattern()\n$(currentTiddler)$(?i)\n\\end\n\n\\define showFooterTabs() \n&lt;span class=\&quot;TWCrossLinksFooter\&quot;&gt;\n    &lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TWCrossLinksSegment]!has[draft.of]] [[$:/ak/plugins/TWCrossLinks/ui/tabs]]\&quot; variable=\&quot;listItem\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;block\&quot;&gt; &lt;/$list&gt;\n&lt;/span&gt;\n\\end\n\n&lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[UseFullMatch4Freelinks]match[true]]\&quot; variable=none&gt;\n    &lt;$set name=\&quot;text-pattern\&quot; value=&lt;&lt;fullMatchPattern&gt;&gt;&gt;\n        &lt;$list filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [regexp:text&lt;text-pattern&gt;] [regexp:title&lt;text-pattern&gt;] [all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]] +[limit[1]]\&quot; variable=none&gt;\n            &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot;&gt;\n                &lt;span class=\&quot;hideprint\&quot;&gt;\n                    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[HideInboundTitle]] -[[true]]\&quot; variable=conf&gt;\n                        &lt;hr /&gt;\n                        &lt;span style=\&quot;font-size:0.85em\&quot; &gt;\n                            //&lt;$count filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [regexp:text&lt;text-pattern&gt;] [regexp:title&lt;text-pattern&gt;] [all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]]\&quot; /&gt;  References:// \n                        &lt;/span&gt;\n                        &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[DefaultFoldData]]\&quot; variable=DefaultFoldState&gt;\n                            &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                                &lt;$button  class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    \n                            &lt;/$reveal&gt;\n                            &lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                                &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot; &gt;{{$:/core/images/fold-button}}&lt;/$button&gt; \n                                &lt;&lt;showFooterTabs&gt;&gt;\n                            &lt;/$reveal&gt;\n                        &lt;/$list&gt;\n                    &lt;/$list&gt;\n                    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[HideInboundTitle]] -[[false]]\&quot; variable=conf&gt;\n                        &lt;&lt;showFooterTabs&gt;&gt;\n                    &lt;/$list&gt;\n                &lt;/span&gt;\n            &lt;/$reveal&gt;\n        &lt;/$list&gt;\n    &lt;/$set&gt;\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[UseFullMatch4Freelinks]match[false]]\&quot; variable=none&gt;\n    &lt;$set name=\&quot;text-pattern\&quot; value=&lt;&lt;PartialMatchPattern&gt;&gt;&gt;\n        &lt;$list filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [regexp:text&lt;text-pattern&gt;] [regexp:title&lt;text-pattern&gt;] [all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]] +[limit[1]]\&quot; variable=none&gt;\n            &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot;&gt;\n                &lt;span class=\&quot;hideprint\&quot;&gt;\n                    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[HideInboundTitle]] -[[true]]\&quot; variable=conf&gt;\n                        &lt;hr /&gt;\n                        &lt;span style=\&quot;font-size:0.85em\&quot; &gt;\n                            //&lt;$count filter=\&quot;[all[current]tagging[]]  [search:keywords&lt;currentTiddler&gt;]  [regexp:text&lt;text-pattern&gt;] [regexp:title&lt;text-pattern&gt;] [all[current]backlinks[]] -[is[current]] -[tag[hide]] -[is[system]]\&quot; /&gt;  References:// \n                        &lt;/span&gt;\n                        &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[DefaultFoldData]]\&quot; variable=DefaultFoldState&gt;\n                            &lt;$reveal type=\&quot;nomatch\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                                &lt;$button  class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;show\&quot;&gt;{{$:/core/images/unfold-button}}&lt;/$button&gt;    \n                            &lt;/$reveal&gt;\n                            &lt;$reveal type=\&quot;match\&quot; stateTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=\&quot;show\&quot; default=&lt;&lt;DefaultFoldState&gt;&gt; &gt;\n                                &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=\&quot;$:/temp/TWCrossLinksFoldData\&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=\&quot;hide\&quot; &gt;{{$:/core/images/fold-button}}&lt;/$button&gt; \n                                &lt;&lt;showFooterTabs&gt;&gt;\n                            &lt;/$reveal&gt;\n                        &lt;/$list&gt;\n                    &lt;/$list&gt;\n                    &lt;$list filter=\&quot;[[$:/ak/plugins/TWCrossLinks/config/default]getindex[HideInboundTitle]] -[[false]]\&quot; variable=conf&gt;\n                        &lt;&lt;showFooterTabs&gt;&gt;\n                    &lt;/$list&gt;\n                &lt;/span&gt;\n            &lt;/$reveal&gt;\n        &lt;/$list&gt;\n    &lt;/$set&gt;\n&lt;/$list&gt;&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/ui/footer&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;modified&quot;: &quot;20200518121114100&quot;
+            &quot;modified&quot;: &quot;20200518214521376&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/ui/footer.kwd&quot;: {
             &quot;created&quot;: &quot;20200428214251454&quot;,
@@ -838,22 +846,22 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
         },
         &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;: {
             &quot;created&quot;: &quot;20200502091404523&quot;,
-            &quot;text&quot;: &quot;''2020-05-18'': v0.1.17\n\n* System Tiddlers should now be hidden\n* Freelinks fixed to show only full word match (credits Scott Kingery)\n* Freelinks now search titles too  (credits Scott Kingery)\n* Performance tweak | More efficient coding \n* Bug fix in reference counter\n\n''2020-05-14'': v0.1.8\n\n* You can now exclude a tiddler from appearing in the references by tagging it with \&quot;hide\&quot; \n\n''2020-05-13'': v0.1.6\n\n* Bug fixes uncaught js error in transclusion code\n\n''2020-05-08'': v0.1.3\n\n* Added counter showing the number of inbound links\n* Fixed bug in Freelinks\n* Saved some screen real-estate in the footer \n* Added the possibility to remove the toggle and show the tabs by default saving even more screen estate try it \n**&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;HideInboundTitle\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Hide Inbound Links Title &amp; display references''&lt;/$checkbox&gt;\n\n''2020-05-05'': v0.1.0\n\n* Inbound links for \&quot;//Backlinks//\&quot; and \&quot;//Freelinks//\&quot; can now be transcluded in a pop-up, try it by enabling this feature from the [[TWCrosslinks|$:/ak/plugins/TWCrossLinks]] config panel\n\n\n''2020-05-03'': v0.0.7\n\n* Added configuration panel, can be found at $:/ak/plugins/TWCrossLinks\n** You can now set the Default state of the \&quot;inbound links\&quot; {Shown / Hidden}\n** You can now set the Default \&quot;inbound links\&quot; tab\n\n''2020-05-02'': v0.0.3\n\n* Initial packaging and release&quot;,
+            &quot;text&quot;: &quot;''2020-05-18'': v0.1.18\n\n* Bug fixes in freelinks\n* Added option to allow freelinks matching with \&quot;full match\&quot; or \&quot;Partial Match\&quot;\n\n''2020-05-18'': v0.1.17\n\n* System Tiddlers should now be hidden\n* Freelinks fixed to show only full word match (credits Scott Kingery)\n* Freelinks now search titles too  (credits Scott Kingery)\n* Performance tweak | More efficient coding \n* Bug fix in reference counter\n\n''2020-05-14'': v0.1.8\n\n* You can now exclude a tiddler from appearing in the references by tagging it with \&quot;hide\&quot; \n\n''2020-05-13'': v0.1.6\n\n* Bug fixes uncaught js error in transclusion code\n\n''2020-05-08'': v0.1.3\n\n* Added counter showing the number of inbound links\n* Fixed bug in Freelinks\n* Saved some screen real-estate in the footer \n* Added the possibility to remove the toggle and show the tabs by default saving even more screen estate try it \n**&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;HideInboundTitle\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Hide Inbound Links Title &amp; display references''&lt;/$checkbox&gt;\n\n''2020-05-05'': v0.1.0\n\n* Inbound links for \&quot;//Backlinks//\&quot; and \&quot;//Freelinks//\&quot; can now be transcluded in a pop-up, try it by enabling this feature from the [[TWCrosslinks|$:/ak/plugins/TWCrossLinks]] config panel\n\n\n''2020-05-03'': v0.0.7\n\n* Added configuration panel, can be found at $:/ak/plugins/TWCrossLinks\n** You can now set the Default state of the \&quot;inbound links\&quot; {Shown / Hidden}\n** You can now set the Default \&quot;inbound links\&quot; tab\n\n''2020-05-02'': v0.0.3\n\n* Initial packaging and release&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/change.log&quot;,
             &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20200518121804096&quot;,
+            &quot;modified&quot;: &quot;20200518215347015&quot;,
             &quot;revision&quot;: &quot;32&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/config&quot;: {
             &quot;created&quot;: &quot;20200503100751953&quot;,
-            &quot;text&quot;: &quot;''By default the //inbound links// should be:'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;show\&quot;&gt; Shown &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;hide\&quot;&gt; Hidden &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n''Select which Tab you want to be open by Default'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;&gt; Backlinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/freelinks\&quot;&gt; Freelinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/keywords\&quot;&gt; Keywords &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/tagging\&quot;&gt; Tagged &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;TranscludeInboundLinks\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Transclude //Backlinks// &amp; //Freelinks// on hover''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;HideInboundTitle\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Make inbound links permanent (removes toggle option)''&lt;/$checkbox&gt;&quot;,
+            &quot;text&quot;: &quot;''By default the //inbound links// should be:'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;show\&quot;&gt; Shown &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultFoldData\&quot; value=\&quot;hide\&quot;&gt; Hidden &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n''Select which Tab you want to be open by Default'' &lt;br /&gt;\n&lt;$tiddler tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot;&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/backlinks\&quot;&gt; Backlinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/freelinks\&quot;&gt; Freelinks &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/keywords\&quot;&gt; Keywords &lt;/$radio&gt;\n&lt;$radio index=\&quot;DefaultTab\&quot; value=\&quot;$:/ak/plugins/TWCrossLinks/core/tagging\&quot;&gt; Tagged &lt;/$radio&gt;\n&lt;/$tiddler&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;TranscludeInboundLinks\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Transclude //Backlinks// &amp; //Freelinks// on hover''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;HideInboundTitle\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Make inbound links permanent (removes toggle option)''&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/ak/plugins/TWCrossLinks/config/default\&quot; index=\&quot;UseFullMatch4Freelinks\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; ''Consider only Full match as //freelink//''&lt;/$checkbox&gt;\n\n&lt;div style=\&quot;float: right;\&quot;&gt;,,~TWCrossLinks version {{$:/ak/plugins/TWCrossLinks!!version}},,&lt;/div&gt;&quot;,
             &quot;bag&quot;: &quot;default&quot;,
             &quot;revision&quot;: &quot;0&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
             &quot;title&quot;: &quot;$:/ak/plugins/TWCrossLinks/config&quot;,
-            &quot;modified&quot;: &quot;20200508050348316&quot;
+            &quot;modified&quot;: &quot;20200518214115646&quot;
         },
         &quot;$:/ak/plugins/TWCrossLinks/readme&quot;: {
             &quot;created&quot;: &quot;20200503110056664&quot;,
@@ -893,14 +901,6 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
             &quot;type&quot;: &quot;text/css&quot;
         }
     }
-}</pre>
-</div>
-<div created="20200429195808011" modified="20200518122015972" tags="" title="$:/ak/plugins/TWCrossLinks/config/default" type="application/json" revision="0" bag="default">
-<pre>{
-    &quot;DefaultFoldData&quot;: &quot;show&quot;,
-    &quot;DefaultTab&quot;: &quot;$:/ak/plugins/TWCrossLinks/core/backlinks&quot;,
-    &quot;TranscludeInboundLinks&quot;: &quot;true&quot;,
-    &quot;HideInboundTitle&quot;: &quot;false&quot;
 }</pre>
 </div>
 <div created="20200430042143481" modified="20200430042150375" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10374,11 +10374,6 @@ Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quo
 <div created="20200429055511434" modified="20200501215527527" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Welcome to Drift]]</pre>
 </div>
-<div status="complete" title="$:/Import" revision="2" bag="default">
-<pre>The following tiddlers were imported:
-
-# [[$:/ak/drift]]</pre>
-</div>
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
@@ -10976,8 +10971,26 @@ html body.tc-body {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200518125628791" modified="20200518125628791" title="$:/state/sidebar" revision="1" bag="default">
+<div created="20200518215439878" modified="20200518215916765" title="$:/state/DriftHomeTabs-651803151" revision="3" bag="default">
+<pre>Drift</pre>
+</div>
+<div created="20200518215517924" modified="20200518215858610" title="$:/state/plugin-info--1700987158-$:/ak/plugins/TWCrossLinks--2091084576" revision="3" bag="default">
+<pre>change.log</pre>
+</div>
+<div created="20200518215919072" modified="20200518215919072" title="$:/state/sidebar" revision="1" bag="default">
 <pre>no</pre>
+</div>
+<div created="20200518215456762" modified="20200518215457414" title="$:/state/tab--1963855381" revision="2" bag="default">
+<pre>$:/core/ui/ControlPanel/StoryView</pre>
+</div>
+<div created="20200518215454652" modified="20200518215454652" title="$:/state/tab-1749438307" revision="1" bag="default">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
+</div>
+<div created="20200518215445753" modified="20200518215445753" title="$:/state/tab-97055648" revision="1" bag="default">
+<pre>$:/ak/plugins/TWCrossLinks/core/freelinks</pre>
+</div>
+<div created="20200518215753625" modified="20200518215753625" title="$:/state/tab/sidebar--595412856" revision="1" bag="default">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/IsAnonymous" revision="1" bag="default">
 <pre>yes</pre>
@@ -10994,7 +11007,7 @@ html body.tc-body {
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre></pre>
 </div>
-<div created="20200518125615767" list="[[Welcome to Drift]]" modified="20200518125615767" title="$:/StoryList" revision="5" bag="default">
+<div created="20200518215441447" list="[[Welcome to Drift]]" modified="20200518215856727" title="$:/StoryList" revision="15" bag="default">
 <pre></pre>
 </div>
 <div created="20200502112123171" list="$:/core/ui/SideBarSegments/site-title $:/core/ui/SideBarSegments/site-subtitle $:/core/ui/SideBarSegments/page-controls $:/core/ui/SideBarSegments/search $:/core/ui/SideBarSegments/tabs" modified="20200502112123186" title="$:/tags/SideBarSegment" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12158,7 +12171,7 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 <div created="20200429112839464" modified="20200429112848984" title="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div created="20200429143346003" modified="20200518124105773" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20200429143346003" modified="20200518215459115" title="$:/view" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>zoomin</pre>
 </div>
 <div created="20200510220312190" modified="20200518051902816" tags="DailyNotes" title="2020-05-10" tmap.id="b1449192-9608-4c72-9e92-412332f9d6b1" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12170,8 +12183,12 @@ div::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.12); }
 <div created="20200516172800532" modified="20200516173211473" tags="DailyNotes" title="2020-05-16" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>''20:27''~/todo I support not todo lists &lt;br /&gt;''20:28''~also check previous days entries &lt;br /&gt;</pre>
 </div>
-<div created="20200502114035466" modified="20200518122225297" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>''v0.1.0'' - 2020-05-16
+<div created="20200502114035466" modified="20200518215845294" tags="" title="Changelog" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<pre>''v0.1.01'' - 2020-05-18
+
+* Updated [[TWCrosslinks|Plugin - TWCrosslinks]] to v0.1.18
+
+''v0.1.0'' - 2020-05-17
 
 * Drift is now packaged as a plugin $:/ak/drift this basically means 2 things
 ** Minor version updates (i.e. increase in the last 2 digits) are dependency updates (Plugins or other) and won't be included in Drift package, you will need to update this yourself
